@@ -1,0 +1,46 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" defer>
+i = 0
+$(document).ready(function(){$("body").html('<IMG ID="myimg" SRC = "kitty.jpg"  style= "position:absolute; top:'+100+'; left:100;width:200px;height:200px;">')
+$("#myimg").click(function(){
+if(i == 0)
+{
+l = 50
+inter = setInterval(bab_1,50);
+i++;
+function bab_1()
+{
+$("#myimg").css({"left":l*2,"top":""+((-Math.sin(l)*25)+80)+""});
+l++;
+if(l ==100)
+{
+clearInterval(inter);
+}
+}
+}
+else if(i == 1)
+{
+inter = setInterval(bab_2,50);
+i = 0;
+function bab_2()
+{
+$("#myimg").css({"left":l*2,"top":""+((-Math.sin(l)*25)+80)+""});
+l--;
+if(l ==50)
+{
+clearInterval(inter);
+}
+}
+}})});
+
+</script>
+</head>
+<BODY id = "mybody" >
+
+</BODY>
+
+</HTML>

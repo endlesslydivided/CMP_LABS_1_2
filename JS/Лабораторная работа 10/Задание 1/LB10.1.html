@@ -1,0 +1,68 @@
+<html>
+<head>
+<TITLE>Перемещаемые изображение и текст</TITLE>
+</head>
+<BODY id = "mybody" >
+<IMG ID="myimg" SRC = "dog2.gif"  style= "position:absolute; top:10; left:10">
+<script type="text/javascript" async>
+var doggy = document.getElementById('myimg');
+doggy.onmousedown = function(e)
+{
+moveAt(e)
+document.body.appendChild(doggy);
+doggy.style.zIndex = 1000;
+function moveAt(e) 
+{
+   doggy.style.left = e.pageX - doggy.offsetWidth / 2 + 'px';
+   doggy.style.top = e.pageY - doggy.offsetHeight / 2 + 'px';
+}
+document.onmousemove = function(e) 
+{
+    moveAt(e);
+}
+doggy.onmouseup = function() {
+    document.onmousemove = null;
+    doggy.onmouseup = null;
+}
+doggy.ondragstart = function() {
+  return false;
+}
+}
+ 
+</script>
+
+<textarea ID="mytext" style= "position:absolute; top:10; left:300">Произвольный текст</textarea>
+<script type="text/javascript" async>
+var textS = document.getElementById('mytext');
+textS.ondblclick = function(t)
+{
+textS.onmousedown = function(t)
+{
+moveAt(t)
+document.body.appendChild(textS);
+textS.style.zIndex = 1000;
+function moveAt(t) 
+{
+   textS.style.left = t.pageX - textS.offsetWidth / 2 + 'px';
+   textS.style.top = t.pageY - textS.offsetHeight / 2 + 'px';
+}
+document.onmousemove = function(t) 
+{
+    moveAt(t);
+}
+
+textS.ondragstart = function() 
+{
+  return false;
+}
+textS.onmouseup = function() {
+    document.onmousemove = null;
+    textS.onmouseup = null;
+	textS.onmousedown = null;
+}
+}
+}
+</script>
+</BODY>
+
+</HTML>

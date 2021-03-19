@@ -1,0 +1,59 @@
+<HTML>
+<head><title>Перемещаемые текстовые облас-ти</title>
+<SCRIPT>
+function resizetext() 
+{ 
+var flag = false 
+}
+var id_img = ""
+function dragF() 
+{
+flag = !flag
+id_img = event.srcElement.id 
+}
+function mybody.onmousemove() 
+{
+if (flag)
+{
+document.all[id_img].style.top = event.clientY
+document.all[id_img].style.left = event.clientX
+resizetext() 
+}
+}
+function mybody.onmouseup() 
+{
+flag = false 
+}
+function resizetext () 
+{ 
+var у, size, idimg, idtext
+for (i =0 ; i < document.all.length; i++) 
+{
+if (document.all[i].tagName=='TEXTAREA') {
+idtext = document.all[i].id
+у = parseInt(document.all[idtext].style.top)
+size = Math.min(y, 800)
+size = Math.max(size, 60)
+document.all[idtext].style.width = size
+document.all[idtext].style.height = 0.8*size
+document.all[idtext].style.zIndex = у
+document.all[idtext].style.fontSize = Math.max(2, y/10)
+}
+}
+}
+</SCRIPT>
+</head>
+<BODY id = "mybody" >
+<TEXTAREA ID="tl" ondblclick="dragF()" STYLE =
+"position:absolute;
+top:10; left: 10; fon-size: large"> Это – первый
+текст</TEXTAREA>
+<TEXTAREA ID="t2" ondblclick="dragF()" STYLE =
+"position:absolute;
+top:100; left:150"> Это – второй текст </TEXTAREA>
+<TEXTAREA ID="t3" ondblclick="dragF()" STYLE =
+"position:absolute; top:150; left:250"> Это - третий текст
+</textarea>
+</BODY>
+
+</HTML>

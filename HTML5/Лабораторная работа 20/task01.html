@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>HTML 5</title>
+</head>
+
+<body>
+<h1 style="font-family:Samsung Sharp Sans;text-align:center" >Я,<mark>Ковалёв Александр Александрович</mark>, изучаю HTML5</h1>
+<video src="doggy.mp4" width="600" height="300" controls="controls"></video> <br>
+<audio src="sombear.mp3" controls="controls"></audio>
+<h1 style="font-family:Samsung Sharp Sans">Нажмите на кнопку для определения ваших координат</h1>
+<script type="text/JavaScript" > 
+function coordinates()
+{
+coord_span = document.getElementById("coord");
+navigator.geolocation.getCurrentPosition(showCoordinates);
+
+}
+function showCoordinates(position)
+{
+coord_span.innerHTML += "Широта:" + position.coords.latitude +"<br>";
+coord_span.innerHTML += "Долгота:" +position.coords.longitude +"<br>";
+}
+</script>
+<input style="font-family:Samsung Sharp Sans"  type="button" value="Определение координат" onclick="coordinates()"/><br>
+<span style="font-family:Samsung Sharp Sans" id="coord"></span>
+
+
+
+
+
+</body>
+</html>

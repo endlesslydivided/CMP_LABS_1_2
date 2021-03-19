@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>HTML 5</title>
+<script type="text/JavaScript" async>
+let ima = new Image();
+ima.src="dog3.jfif"; 
+function drawlist()
+{
+let canvas = document.getElementById('draw');
+let x = canvas.getContext('2d');
+let grad = x.createLinearGradient(0,0,0,750);
+grad.addColorStop(0.0,"coral");
+grad.addColorStop(1.0,"blueviolet");
+patte = x.createPattern(ima,"repeat");
+
+let grad_1 = x.createLinearGradient(0,0,0,750);
+grad_1.addColorStop(0.0,"blueviolet");
+grad_1.addColorStop(1.0,"springgreen");
+x.beginPath();
+x.moveTo(200,20);
+x.lineTo(200,600);
+x.lineTo(800,600);
+x.lineTo(200,600);
+x.moveTo(200,20);
+x.closePath();
+x.stroke();
+x.font="15px Samsung Sharp Sans";
+x.fillText("Количество студентов",5,40);
+x.fillText("5   ▬",175,500);
+x.fillText("      -",175,450);
+x.fillText("10  ▬",175,400);
+x.fillText("      -",175,350);
+x.fillText("15  ▬",175,300);
+x.fillText("      -",175,250);
+x.fillText("20 ▬",175,200);
+x.fillText("      -",175,150);
+x.fillText("25 ▬",175,100);
+x.fillText("Город",840,645);
+x.font="12px Samsung Sharp Sans";
+x.fillText("Минск",245,625);
+x.fillText("Могилёв",345,625);
+x.fillText("Гомель",445,625);
+x.fillText("Гродно",545,625);
+x.fillText("Брест",645,625);
+x.fillText("Витебск",745,625);
+
+x.fillStyle="coral";
+x.fillRect(242,600,50,-510);
+x.fillStyle=grad;
+x.fillRect(342,600,50,-450);
+x.fillStyle="salmon";
+x.fillRect(442,600,50,-250);
+x.fillStyle="skyblue";
+x.fillRect(542,600,50,-350);
+x.fillStyle=patte;
+x.fillRect(642,600,50,-400);
+
+x.fillStyle=grad_1;
+x.fillRect(742,600,50,-325);
+}
+function drawDiag()
+{
+let canvas = document.getElementById('drawDiag');
+let x = canvas.getContext('2d');
+
+
+x.beginPath();
+x.arc(500, 500, 250, -Math.PI/180*90, 360, false);
+x.lineTo(500,500);
+x.stroke();
+x.closePath();
+
+x.beginPath();
+x.lineTo(500,500);
+x.arc(500, 500, 250, -Math.PI/180*90,-Math.PI/180*12, false);
+x.lineTo(500,500);
+x.fillStyle="coral";
+x.stroke();
+x.fill();
+x.closePath();
+
+x.beginPath();
+x.lineTo(500,500);
+x.arc(500, 500, 250, -Math.PI/180*12,Math.PI/180*69, false);
+x.lineTo(500,500);
+x.fillStyle="salmon";
+x.stroke();
+x.fill();
+x.closePath();
+
+x.beginPath();
+x.lineTo(500,500);
+x.arc(500, 500, 250, Math.PI/180*69,Math.PI/180*90.8, false);
+x.lineTo(500,500);
+x.fillStyle="mediumspringgreen";
+x.stroke();
+x.fill();
+x.closePath();
+
+x.beginPath();
+x.lineTo(500,500);
+x.arc(500, 500, 250, Math.PI/180*90.8,Math.PI/180*160.1, false);
+x.lineTo(500,500);
+x.fillStyle="skyblue";
+x.stroke();
+x.fill();
+x.closePath();
+
+x.beginPath();
+x.lineTo(500,500);
+x.arc(500, 500, 250, Math.PI/180*160.1,Math.PI/180*223, false);
+x.lineTo(500,500);
+x.fillStyle="violet";
+x.stroke();
+x.fill();
+x.closePath();
+
+x.beginPath();
+x.lineTo(500,500);
+x.arc(500, 500, 250, Math.PI/180*223,Math.PI/180*270, false);
+x.lineTo(500,500);
+x.fillStyle="LightYellow";
+x.stroke();
+x.fill();
+x.closePath();
+x.fillStyle="Black";
+x.font="35px Samsung Sharp Sans";
+x.shadowOffsetX=3;
+x.shadowOffsetY=3;
+x.shadowBlur=15;
+x.shadowColor='black';
+x.fillText("Количество студентов",290,175);
+x.shadowOffsetX=0;
+x.shadowOffsetY=0;
+x.shadowBlur=0;
+x.font="20px Samsung Sharp Sans";
+x.fillStyle='coral';
+x.fillText("Минск 22%",675,290);
+x.fillStyle='salmon';
+x.fillText("Могилёв 20%",725,680);
+x.fillStyle='mediumspringgreen';
+x.fillText("Гомель 10%",495,780);
+x.fillStyle='skyblue';
+x.fillText("Гродно 15%",210,715);
+x.fillStyle='violet';
+x.fillText("Брест 17%",145,440);
+x.fillStyle='khaki';
+x.fillText("Витебск 16%",270,255);
+}
+
+</script>
+</head>
+<body>
+<input type="button" onclick="drawlist()" value="Нарисовать гистограмму"/>
+<input type="button" onclick="drawDiag()" value="Нарисовать диаграмму"/><br>
+
+<canvas id='draw' width="1000" height="650"></canvas>
+<canvas id='drawDiag' width="1000" height="1000"></canvas>
+</body>
+</html>

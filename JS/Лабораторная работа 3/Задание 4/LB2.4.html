@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 2</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function tabletd3()
+{
+var a = new Number(prompt("Введите целое число a"));
+var b = new Number(prompt("Введите дробное число b"));
+document.write('<table style="border:2px solid black;border-collapse:collapse ">');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ 'Число' + '</td>'+'<td style="border:2px solid black;" >'+ 'Метод' + '</td>'+'<td style="border:2px solid black;" >'+ 'Результат ' + '</td>' + '<td style="border:2px solid black;" >'+'Описание метода');
+
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ a + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toExponential(6)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ a.toExponential(6) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Представление числа в экспоненциальной форме' + '</td>');
+document.write('</tr>');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ a + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toFixed(6)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ a.toFixed(6) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Представляет число в форме с фиксированным количеством цифр после точки' + '</td>');
+document.write('</tr>');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ a + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toPrecision(6)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ a.toPrecision(6) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Представляет число с заданным общим количеством значащих цифр' + '</td>');
+document.write('</tr>');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ a + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toString(16)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ a.toString(16) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Строковое представление числа в 16-ричной системе счисления' + '</td>');
+document.write('</tr>');
+
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ b + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toExponential(6)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ b.toExponential(6) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Представление числа в экспоненциальной форме' + '</td>');
+document.write('</tr>');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ b + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toFixed(6)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ b.toFixed(6) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Представляет число в форме с фиксированным количеством цифр после точки' + '</td>');
+document.write('</tr>');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ b + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toPrecision(6)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ b.toPrecision(6) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Представляет число с заданным общим количеством значащих цифр' + '</td>');
+document.write('</tr>');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ b + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'toString(16)' + '</td>');
+document.write('<td style="border:2px solid black;" >'+ b.toString(16) + '</td>');
+document.write('<td style="border:2px solid black;" >'+ 'Строковое представление числа в 16-ричной системе счисления' + '</td>');
+document.write('</tr>');
+
+document.write('</table>');
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="Методы Number" onclick="tabletd3()"/>
+
+</body>
+
+
+</html>

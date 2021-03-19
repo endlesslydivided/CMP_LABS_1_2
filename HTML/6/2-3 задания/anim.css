@@ -1,0 +1,86 @@
+.ball 
+{
+position:absolute;
+ width: 100px;
+ height: 100px;
+ background: #CC3F85;
+ border-radius: 100%;
+ margin-left:5px;
+  animation: jump 3s infinite linear;
+}
+.qubic
+{
+width:200px;
+height:200px;
+margin:250px;
+
+
+}
+.qubic1
+{position:absolute;
+width:75px;
+height:75px;
+border-color:#7828FD;
+border-width:5px;
+border-radius:10%;
+border-style: solid;
+animation: around 3s infinite linear;
+animation-timing-function: ease;margin:45px;
+
+}
+.qubic2
+{position:absolute;
+width:50px;
+height:50px;
+border-color:#26A7FF;
+border-width:5px;
+border-radius:10%;
+border-style: solid;
+animation: around 3s infinite linear;
+animation-timing-function: ease;margin:58px;
+
+}
+.qubic3
+{position:absolute;
+width:25px;
+height:25px;
+border-color:#FDF028;
+border-width:5px;
+border-radius:10%;
+border-style: solid;
+animation: around 3s infinite linear;
+animation-timing-function: ease;margin:70px;
+
+}
+.qubic4
+{position:absolute;
+width:5px;
+height:5px;
+border-color:#FF5126;
+border-width:5px;
+border-radius:10%;
+border-style: solid;
+animation: around 3s infinite linear;
+animation-timing-function: ease;
+margin:80px;
+
+}
+#delay1
+{animation-delay: 0.5s;}
+#delay2
+{animation-delay: 1s;}
+#delay3
+{animation-delay: 1.5s;}
+@keyframes jump {
+  0% { bottom: 100%; }
+  25% { bottom:0; width:100px; height:100px; }
+  30% { bottom:0; width:110px; height:25px; }
+  35% { bottom:0; width:100px; height:100px; }
+  70% { bottom:100%;}
+  100% { bottom:100%;}
+}
+@keyframes around
+{
+  from {transform:rotate(0deg);}
+  to   {transform:rotate(360deg);}
+} 

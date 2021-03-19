@@ -1,0 +1,79 @@
+<html>
+<head>
+<TITLE>Перемещаемое изображение</TITLE>
+</head>
+<BODY id = "mybody" >
+<IMG ID="myimg" SRC = "kitty.jpg"  style= "position:absolute; top:10; left:10">
+<script type="text/javascript" async>
+var kitty = document.getElementById('myimg');
+let i = 10;
+let l = 0;
+k = 0;
+kitty.onclick = function()
+{
+if(k)
+{
+clearInterval(inter);
+}
+document.body.appendChild(kitty);
+kitty.style.zIndex = 1000;
+inter = setInterval("moveAt()" , 1);
+}
+function moveAt() 
+{
+k = 1
+if(l == 0 && i < 500)
+{
+   kitty.style.left = i;
+   kitty.style.top = 10;
+   i++;
+if(i == 500)
+{
+clearInterval(inter);
+l++;
+i = 10;
+}
+}
+if(l == 1 && i < 500)
+{
+   kitty.style.left = 500;
+   kitty.style.top = i ;
+   i++;
+if(i == 500)
+{
+clearInterval(inter);
+l++;
+i = 500;
+}
+}
+if(l == 2 && i > 10)
+{
+   kitty.style.left = i;
+   kitty.style.top = 500 ;
+   i--;
+if(i == 10)
+{
+clearInterval(inter);
+l++;
+i = 500;
+}
+}
+if(l == 3 && i > 10)
+{
+   kitty.style.left = 10 ;
+   kitty.style.top = i;
+   i--;
+if(i == 10)
+{
+clearInterval(inter);
+l=0;
+i = 10;
+}
+}
+
+
+}
+</script>
+</BODY>
+
+</HTML>

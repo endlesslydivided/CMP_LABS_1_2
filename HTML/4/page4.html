@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type='text/css'>
+#par1
+{
+border: 5px brown solid;
+margin-top:5px;
+padding: 5px 5px 5px 5px;
+text-align: center;
+}
+#par2
+{
+border: 5px red dashed;
+margin-right:50px;
+text-align: center;
+}
+#par3
+{
+border-top: 10px red solid;
+border-right: 10px green dashed;
+border-left: 10px blue dotted;
+border-bottom: 10px yellow double;
+margin-top:5px;
+padding: 100px 50px 30px 400px;
+text-align: center;
+}
+#par4
+{
+border: 1px orange solid;
+margin-top:5px;
+padding: 5px 5px 5px 5px;
+text-align: center;
+}
+#par5
+{
+border-top: 2px red solid;
+border-right: 2px grey dashed;
+border-left: 2px grey dashed;
+border-bottom: 2px red solid;
+margin-top:5px;
+padding: 5px 5px 5px 5px;
+text-align: center;
+}
+#par6
+{
+border: 7px #1435AD double;
+margin-top:50px;
+background: linear-gradient(50deg,#00ff59,#0091ff,#ff002f,#ffc800);
+padding: 25px;
+text-align: center;
+font-family:Arial;
+font-style:italic;
+color:white;
+}
+#par7
+{
+border-top: 1px #FF8100 dashed;
+border-bottom: 2px #0B6124 solid;
+margin-top:5px;
+padding: 5px 5px 5px 5px;
+text-align: center;
+}
+#uli
+{
+list-style-type:square;
+}
+ol {
+    list-style-type: none; 
+    counter-reset:  item; 
+	padding: 0;
+	margin-left: -20px;
+   }
+#oli:before {
+    content: counter(item) ') '; 
+    counter-increment: item; 
+   }
+a:link {text-decoration:none;}
+</style>
+</head>
+<body>
+<p id='par1'>Содержание блока</p>
+<p id='par2'>Содержание блока</p>
+<p id='par3'>Содержание блока</p>
+<p id='par4'>Содержание блока</p>
+<p id='par5'>Содержание блока</p>
+<p id='par6'>Содержание блока </p> 
+<p id='par7'>Содержание блока </p> 
+<ul id = 'uli'>
+<li ><a href="page1.html">Задание 1</a></li>
+<li ><a href="page2.html">Задание 2</a></li>
+<li ><a href="page3.html">Задание 3</a></li>
+<ol ;>
+<li id = 'oli'><a href="page1.html">         Задание 4.1</a></li>
+<li id = 'oli'><a href="page2.html">         Задание 4.2</a></li>
+<li id = 'oli'><a href="page3.html">         Задание 4.3</a></li>
+</ol>
+</ul>
+</body>
+</html>

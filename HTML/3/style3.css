@@ -1,0 +1,54 @@
+body{background-color: B4FCFF; }
+
+#l2{color: maroon;
+font-size: 49pt;
+text-decoration:underline;
+font-weight:500;
+font-family:arial;
+word-spacing: 9;
+letter-spacing: -3 ;}
+
+#l1{color: cyan;
+font-size: 30pt;
+text-decoration:overline ;
+font-weight:100;
+font-family:TimesNewRoman;
+word-spacing: 9;
+letter-spacing: -3 ;}
+b:first-child{color: red;
+}
+p:first-letter{
+border: 2px solid grey;
+font-size: 200%;
+}
+p:first-line{
+text-decoration :underline;
+}
+.lp{color:blue;
+text-align: right;
+word-spacing:5;
+letter-spacing:1;
+font-family:Calibri;}
+.lp1{color:cyan;
+text-align: center;
+word-spacing:10;
+letter-spacing:-2;
+font-family:Arial;}
+.lp2{color:purple;
+text-align: left;
+word-spacing:5;
+letter-spacing:5;
+font-family:Impact;}
+.lp3{color:lime;
+text-align: justify;
+word-spacing:2;
+letter-spacing:-2;
+font-family:TimesNewRoman;}
+.lp4{font-size: 35pt;
+text-align: right;
+word-spacing:2;
+letter-spacing:-2;
+font-family:TimesNewRoman;}
+fio:before{content:"Cтудент I курса "}
+fio:after{content:" проживающий по адресу г. Минск ул.Калиновского 20"}
+

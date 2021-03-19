@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 4</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function Gruppa(n,spec,kolich,course)
+{
+this.n = n;
+this.spec = spec;
+this.kolich = kolich;
+this.course = course;
+this.add_stud = function add_stud(k)
+{
+this.kolich += k;
+document.getElementById('addstudent').innerHTML = ('В группу номер ' + this.n + ' добавили ' + k + ' студентов(а)<br\>');
+}
+this.sub_stud = function sub_stud(k)
+{
+this.kolich -= k;
+document.getElementById('substudent').innerHTML = ('Из группы номер ' + this.n + ' исключили ' + k + ' студентов(а)<br\>');
+}
+}
+function output1()
+{
+let mass = ["pow","pop","push","shift","round","floor","slince","sort"];
+
+arrayMass = new Array(); 
+arrayMass = mass.slice(1,4);
+arrayMass[3] = mass[6];
+arrayMass[4] = mass[7];
+
+mathMass = new Array();
+mathMass = mass.slice(4,6);
+mathMass[2] = mass[0];
+let oneMath =["sqrt"];
+let mathMassLast = oneMath.concat(mathMass);
+let lengthArray = arrayMass.push("concat");
+let lengthMath = mathMassLast.length;
+
+document.write('<span>Массив Array:<br/>');
+for(i = 0; i < lengthArray;i++)
+{
+document.write(arrayMass[i] + '<br/>');
+}
+document.write('<span>Массив Math:<br/>');
+for(i = 0; i < lengthMath;i++)
+{
+document.write(mathMassLast[i] + '<br/>');
+}
+delete mathMassLast[2];
+document.write('<span>Массив Math после удаления 3 элемента:<br/>');
+for(i = 0; i < lengthMath;i++)
+{
+document.write(mathMassLast[i] + '<br/>');
+}
+document.write('<br/>');
+if(1 in arrayMass)
+{
+	document.write('В массиве Array есть элемент с номером 2');
+}
+}
+
+
+
+function output2()
+{
+let FN = new String(prompt("Введите своё ФИО."));
+FNU = FN.toUpperCase();
+document.getElementById('output2').innerHTML = (FN + "<br/>");
+}
+
+function output3()
+{
+let mass = ["pow","pop","push","shift","round","floor","slince","sort"];
+let FN = new String("Строка");
+if (mass instanceof Array)
+{
+	document.getElementById('output3').innerHTML = ("Этот объект является массивом" + "<br/>");
+}
+else
+{
+	document.getElementById('output3').innerHTML = ("Этот объект не является массивом" + "<br/>");
+}
+if (FN instanceof String)
+{
+	document.getElementById('output5').innerHTML = ("Этот объект является cтрокой" + "<br/>");
+}
+else
+{
+	document.getElementById('output5').innerHTML = ("Этот объект не является cтрокой" + "<br/>");
+}
+if (Gruppa instanceof Object)
+{
+	document.getElementById('output4').innerHTML = ("Это объект" + "<br/>");
+}
+else
+{
+	document.getElementById('output4').innerHTML = ("Это не объект " + "<br/>");
+}
+}
+
+
+</script>
+</head>
+<body>
+
+<input type='button' value='Массив элементов Array и Math' onclick='output1()'/>
+<input type='button' value='Строка String' onclick='output2()'/>
+<span id="output2"> </span>
+<input type='button' value='Проверка объектов' onclick='output3()'/>
+Результат:<span id="output3"> </span>
+<span id="output4"> </span>
+<span id="output5"> </span>
+
+</body>
+
+
+</html>

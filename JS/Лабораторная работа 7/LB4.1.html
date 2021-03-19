@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 4</title>
+<link rel="stylesheet" href="LB6.1.css">
+<script type="text/javascript">
+function Gruppa(n,spec,kolich,course)
+{
+this.n = n;
+this.spec = spec;
+this.kolich = kolich;
+this.course = course;
+this.add_stud = function add_stud(k)
+{
+this.kolich += k;
+document.getElementById('addstudent').innerHTML = ('В группу номер ' + this.n + ' добавили ' + k + ' студентов(а)<br\>');
+}
+this.sub_stud = function sub_stud(k)
+{
+this.kolich -= k;
+document.getElementById('substudent').innerHTML = ('Из группы номер ' + this.n + ' исключили ' + k + ' студентов(а)<br\>');
+}
+}
+function grups1()
+{
+gr1 = new Gruppa(prompt('Введите номер'),prompt('Введите название группы'),Number(prompt('Введите количество студентов:')),prompt('Введите курс: '));
+document.getElementById('addgroup1').innerHTML = (gr1.n + ' ' + gr1.spec+ ' ' + gr1.kolich+ ' ' + gr1.course);
+}
+function grups2()
+{
+gr2 = new Gruppa(prompt('Введите номер'),prompt('Введите название группы'),Number(prompt('Введите количество студентов:')),prompt('Введите курс: '));
+document.getElementById('addgroup2').innerHTML = (gr2.n + ' ' + gr2.spec+ ' ' + gr2.kolich+ ' ' + gr2.course);
+}
+function grups3()
+{
+gr3 = new Gruppa(prompt('Введите номер'),prompt('Введите название группы'),Number(prompt('Введите количество студентов:')),prompt('Введите курс: '));
+document.getElementById('addgroup3').innerHTML = (gr3.n + ' ' + gr3.spec+ ' ' + gr3.kolich+ ' ' + gr3.course);
+}
+function add_sub_grups1()
+{
+if(Number(prompt("Что необходимо сделать:0 - удалить студентов из группы, 1 - добавить студентов в группу")))
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо добавить в группу: '));
+gr1.add_stud(k);
+}
+else
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо удалить из группы: '));
+gr1.sub_stud(k);
+}
+document.getElementById('addgroup1').innerHTML = (gr1.n + ' ' + gr1.spec+ ' ' + gr1.kolich+ ' ' + gr1.course);
+}
+function add_sub_grups2()
+{
+if(Number(prompt("Что необходимо сделать:0 - удалить студентов из группы, 1 - добавить студентов в группу")))
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо добавить в группу: '));
+gr2.add_stud(k);
+}
+else
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо удалить из группы: '));
+gr2.sub_stud(k);
+}
+document.getElementById('addgroup2').innerHTML = (gr2.n + ' ' + gr2.spec+ ' ' + gr2.kolich+ ' ' + gr2.course);
+}
+function add_sub_grups3()
+{
+if(Number(prompt("Что необходимо сделать:0 - удалить студентов из группы, 1 - добавить студентов в группу")))
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо добавить в группу: '));
+gr3.add_stud(k);
+}
+else
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо удалить из группы: '));
+gr3.sub_stud(k);
+}
+document.getElementById('addgroup3').innerHTML = (gr3.n + ' ' + gr3.spec+ ' ' + gr3.kolich+ ' ' + gr3.course);
+}
+function ins()
+{
+if ('spec' in gr1)
+{
+document.getElementById('insres').innerHTML = ('Свойство spec есть у объекта gr1');
+}
+else
+{
+document.getElementById('insres').innerHTML = ('Свойство spec отсутсвует у объекта gr1');
+}
+}
+function clos1()
+{
+window.close();
+}
+function aler1()
+{
+window.alert('Лабораторная работа 4');
+}
+</script>
+</head>
+<body>
+
+<input type='button' value='Добавить группу №1' onclick='grups1()'/>
+Результат: <span id='addgroup1'></span>
+<input type='button' value='Добавить группу №2' onclick='grups2()'/>
+Результат: <span id='addgroup2'></span>
+<input type='button' value='Добавить группу №3' onclick='grups3()'/>
+Результат: <span id='addgroup3'></span>
+<input type='button' value='Изменить количество студентов в группе №1' onclick='add_sub_grups1()'/>
+<input type='button' value='Изменить количество студентов в группе №2' onclick='add_sub_grups2()'/>
+<input type='button' value='Изменить количество студентов в группе №3' onclick='add_sub_grups3()'/>
+Результат: <span id='addstudent'></span><span id='substudent'></span>
+<input type='button' value='Есть ли свойство spec у элемента gr1?' onclick='ins()'/>
+Результат: <span id='insres'></span>
+<input type='button' value='Закрыть окно 1' onclick='clos1()'/>
+<input type='button' value='Вывести имя окна' onclick='aler1()'/>
+
+</body>
+
+
+</html>

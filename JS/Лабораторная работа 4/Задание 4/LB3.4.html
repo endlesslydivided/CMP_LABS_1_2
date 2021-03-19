@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 2</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function tabletd()
+{
+let x = new Date;
+document.write('<table style="border:2px solid black;border-collapse:collapse ">');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Год' +'</td>' +'<td style="border:2px solid black;" >'+ x.getFullYear() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Месяц' +'</td>' +'<td style="border:2px solid black;" >'+ (Number(x.getMonth()) + 1)  +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'День' +'</td>' +'<td style="border:2px solid black;" >'+ x.getDate() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Час' +'</td>' +'<td style="border:2px solid black;" >'+ x.getHours() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Минуты' +'</td>' +'<td style="border:2px solid black;" >'+ x.getMinutes() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Секунды' +'</td>' +'<td style="border:2px solid black;" >'+ x.getSeconds() +'</td></tr>');
+document.write('</table>');
+}
+document.getElementById('table').innerHtml = tabletd();
+</script>
+</head>
+
+<body>
+<span id="tabl"></span>
+
+</body>
+
+
+</html>

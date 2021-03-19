@@ -1,0 +1,52 @@
+body
+{
+	margin:0;
+	padding-left:6px;
+}
+.menu-item{
+position: relative;
+cursor: pointer;
+display:inline-block;
+width:33%;
+font-family:samsung;
+text-align:center;
+font-size:20px;
+}
+.menu-item .submenu
+{
+border-radius:30px;
+width: 70%;
+background: radial-gradient(rgb(242, 242, 242),rgb(217, 217, 217));
+position: absolute;
+cursor: pointer;
+margin-top:3px;
+margin-left:75px;
+font-size:15px;
+}
+.menu-item:nth-child(1)
+{
+	background: #88ff4d;
+}
+.menu-item:nth-child(2)
+{
+	background: rgb(210, 255, 77);
+}
+.menu-item:nth-child(3)
+{
+	background: rgb(255, 210, 77);
+}
+@font-face
+{
+	font-family:SamsO;
+	src:url("Шрифты/zncog-el4me.ttf");
+}
+@font-face
+{
+	font-family:samsung;
+	src:url("Шрифты/SamsungSharpSans.ttf");
+}
+@font-face
+{
+	font-family:Striped;
+	src: url("Шрифты/14692.ttf");
+}

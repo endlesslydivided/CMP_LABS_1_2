@@ -1,0 +1,14 @@
+table{
+border-collapse: collapse;
+border: 6px solid #6b5a5a;
+width: 25px;
+text-align: center;
+vertical-align: middle;
+background:linear-gradient(45deg,#EECFBA,#C5DDE8);
+}
+td,tr{border-collapse: collapse;
+border:3px solid black;
+padding: 15px 45px;
+font-family:Calibri;
+font-style:italic;
+font-size:13pt;}

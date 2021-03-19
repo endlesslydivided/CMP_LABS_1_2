@@ -1,0 +1,60 @@
+<html>
+<head>
+<TITLE>Меню</TITLE>
+<link rel="stylesheet" href="tablestyle.css">
+</head>
+<body>
+<div id="nav">
+<div class="menu-item">
+<p>Меню 1</p>
+<div class="submenu">
+<p>Подменю</p>
+</div>
+</div>
+<div class="menu-item">
+<p>Меню 2</p>
+<div class="submenu">
+<p>Подменю</p>
+</div>
+</div>
+<div class="menu-item">
+<p> Меню 3</p>
+<div class="submenu">
+<p>Подменю</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+document.getElementById('nav').onmouseover = function(event){
+//отслеживает нахождение мыши внутри блока
+var target = event.target;
+//отслеживаем клик
+if (target.className == 'menu-item'){
+var s = target.getElementsByClassName('submenu');
+closeMenu();
+s[0].style.display='block';
+//массив, содержащий ложное меню
+}
+}
+document.onmouseover=function(event){
+var target = event.target;
+console.log(event.target);
+if (target.className!='menu-item' &&
+target.className!='submenu'&&
+target.tagName!='P'){
+closeMenu();
+}
+}
+function closeMenu(){
+//получение всех элементов подменю в блоке nav, присваивание
+var menu = document.getElementById('nav');
+var subm=document.getElementsByClassName('submenu');
+for (var i=0; i <subm.length; i++){
+subm[i].style.display ="none";
+}
+}
+</script>
+</body>
+
+
+</HTML>

@@ -1,0 +1,291 @@
+<html>
+<head>
+<title> Моя первая страница</title>
+<script text="text/javascript">
+function output()
+{
+let grade1= document.getElementsByTagName('tr')[3].getElementsByTagName('td')[2].innerHTML;
+let grade2= document.getElementsByTagName('tr')[4].getElementsByTagName('td')[2].innerHTML;
+let grade3= document.getElementsByTagName('tr')[5].getElementsByTagName('td')[2].innerHTML;
+let grade4= document.getElementsByTagName('tr')[6].getElementsByTagName('td')[2].innerHTML;
+let grade5= document.getElementsByTagName('tr')[7].getElementsByTagName('td')[2].innerHTML;
+let average =((+grade1 + +grade2 + +grade3 + +grade4 + +grade5) / 5);
+document.getElementsByTagName('span')[1].innerHTML = document.getElementsByTagName('span')[1].innerHTML + ' ' +(average);
+}
+
+
+function vivod()
+{
+alert("Вас приветствует учебный центр")
+name = prompt("Введите имя")
+alert('Добро пожаловать на наши курсы, '+ name + '!')
+if(confirm("Хотите стать Web-дизайнером?"))
+{
+alert('Учите стили CSS и JavaScript!')
+}
+else
+{
+alert('Упускаете время!')
+}
+}
+function sumnumbers()
+{
+number1 = prompt("Введите первое число")
+number2 = prompt("Введите второе число")
+sum = +number2 + +number1
+alert('Сумма данных чисел равна: ' + sum )
+document.getElementById('resultsumone').innerHTML = sum;
+}
+function sumstring()
+{
+number1 = prompt("Введите первую строку")
+number2 = prompt("Введите вторую строку")
+sum = number1 + " " + number2 
+alert('Сумма данных строк равна: ' + sum )
+document.getElementById('resultsumtwo').innerHTML = sum;
+}
+function sumstringnumber()
+{
+number1 = prompt("Введите строку")
+number2 = prompt("Введите число")
+sum = number1 + +number2 
+alert('Сумма строки и числа равна:' + sum )
+document.getElementById('resultsumthr').innerHTML = sum;
+}
+function sumnumberstring()
+{
+number1 = prompt("Введите число")
+number2 = prompt("Введите строку")
+sum = +number1 + number2 
+alert('Сумма числа и строки  равна:' + sum )
+document.getElementById('resultsumfour').innerHTML = sum;
+}
+function vivod2()
+{
+sum = 'строка'
+alert('Результатом сложения строки и числа всегда будет … ' + sum )
+}
+function vira()
+{
+var x = Number(prompt("Введите значение переменной x"))
+var y = Number(prompt("Введите значение переменной y"))
+var znaheniea = (35*y - 25*x)/5 + 232;
+var znahenieb = (8*y/x+5*x/y-43)*6;
+var znaheniec = (znaheniea > znahenieb) ? znaheniea % znahenieb : znahenieb % znaheniea;
+alert('Результат первого выражения: ' + znaheniea  )
+alert('Результат второго выражения: ' + znahenieb  )
+alert('Остаток от деления первого выражения на второе: ' + znaheniec )
+
+document.getElementById('resulta').innerHTML = znaheniea;
+document.getElementById('resultb').innerHTML = znahenieb;
+document.getElementById('resultc').innerHTML = znaheniec;
+}
+function ifelse()
+{
+var x = Number(prompt("Введите значение переменной x"))
+if((x < 20 || x > 40) && x != 15 && x % 5 == 0)
+{
+alert('Правильное значение')
+}
+else
+{
+alert('Неправильное значение')
+}
+}
+function ifelseif()
+{
+var x = Number(prompt("Введите значение первого числа"))
+var y = Number(prompt("Введите значение второго числа" ))
+if(x > y)
+{
+alert( x +' больше ' + y )
+}
+else if (x == y)
+{
+alert(x +' равно ' + y)
+}
+else
+{
+alert(x +' меньше ' + y)
+}
+}
+function ifelseifalt()
+{
+var x = Number(prompt("Введите ваш средний балл по экзаменам"));
+(x > 6) ? alert('У вас повышенная стипендия') :alert('У вас обычная стипендия');
+}
+function whichday()
+{
+var x = Number(prompt("Введите номер дня в неделе"));
+if(x > 0 && x < 7)
+{switch(x)
+{
+case 1: document.getElementById('nameday').innerHTML = 'Понедельник';break;
+case 2: document.getElementById('nameday').innerHTML = 'Вторник';break;
+case 3: document.getElementById('nameday').innerHTML = 'Среда';break;
+case 4: document.getElementById('nameday').innerHTML = 'Четверг';break;
+case 5: document.getElementById('nameday').innerHTML = 'Пятница';break;
+case 6: document.getElementById('nameday').innerHTML = 'Суббота';break;
+case 7: document.getElementById('nameday').innerHTML = 'Воскресенье';break;
+}
+}
+else
+{
+document.getElementById('nameday').innerHTML = 'Введено неверное число!';
+}
+}
+function trycatch()
+{
+try {
+
+var x = Number(prompt("Введите число")); 
+
+   if (isNaN(x)) 
+   {
+    throw new SyntaxError("Введён текст!");
+  }
+  else
+  {
+  alert('Ваше число: ' + x);
+  }
+} catch(e) {
+
+  alert('Ошибка: был ввёден текст, а не число!'); 
+
+}
+}
+function out()
+{
+for(let i = 0; i < document.all.length;i++)
+{
+let child = document.all[i];
+alert("Имя тега: " + child.tagName + ". Номер тега: " + (i+1));
+}
+}
+function outSpan()
+{
+let span = document.getElementsByTagName('span')[0];
+alert("Содержимое тега: " + span.innerHTML);
+}
+function outSpan1()
+{
+for(let i = 0; i < document.all.length;i++)
+{
+if(document.all[i] == document.getElementsByTagName('span')[0])
+{
+let span = document.getElementsByTagName('span')[0];
+alert("Содержимое тега: " + span.innerHTML);
+}
+}
+}
+
+function outSpan2()
+{
+let span = document.getElementById('resultsumone');
+alert("Содержимое тега: " + span.innerHTML);
+}
+function out1()
+{
+for(let i = 0;i < document.body.childNodes.length;i++)
+{
+if(document.body.childNodes[i].tagName != undefined)
+{
+let span = document.body.childNodes[i];
+alert(span.tagName);
+}
+}
+}
+
+</script>
+
+</head>
+<body>
+<h1 align ="center">Я,<a href="2.html">Ковалёв Александр Александрович</a>, изучаю <span style="color:blue;">HTML </span> и CSS</h1>
+
+<h3 align ="center"><font size = "8"> Моя автобиография</font></h3>
+
+<h4 align ="center"><font size = "5"> Моя семья</font></h4>
+
+<h2> <font face = "Arial">Я родился в городе Могилёв <span style="color:red;">9 апреля 2002 года</span>. Мою маму зовут Ирина Николаевна, 
+а папу - Александр Михайлович. Я родился в обычной, среднестатистической семье.Также у меня есть сестра Женя, которая старше меня на <span style="color:red;">9 лет </span>. 
+Она отучилась в медколледже и уже работает в аптеке.</font></h2>
+
+<h4 align ="center"><font size = "5"> Моё детство</font></h4>
+
+<h2> <font face = "Courier New"> Моё детство проходило радостно. Каждый день я находил какие-то приключения и радовался обычным вещам. Наверное, поэтому я весьма наблюдательный 
+и жизнерадостный.</font></h2>
+
+<h4 align ="center"><font size = "5"> Школа и университет</font></h4>
+
+<h2> <font face = "Comic Sans MS">В 6 лет я пошёл в <span style="color:red;">школу номер 28</span>, где учился до 17 лет. 
+Успешно сдав экзамены, я поступил в<span style="color:red;"> БГТУ </span>на специальность, о которой мечтал всю жизнь.</font></h2>
+<h2 align="center"> Список покупок</h2>
+<OL>
+<LI>Продукты:</LI>
+<UL type="disk">
+<LI>Молочные продукты;</LI>
+<LI>Мясо.</LI>
+</UL>
+<LI>Бытовая химия:</LI>
+<UL type="square">
+<LI>Гель для мытья посуды;</LI>
+<LI>Спрей для окон;</LI>
+<LI>Средство для мытья ванны;</LI>
+<LI>Средство для мытья пола.</LI>
+</UL>
+<LI>Средства гигиены:</LI>
+<UL type="circle">
+<LI>Гель для душа;</LI>
+<LI>Шампунь;</LI>
+<LI>Мыло;</LI>
+<LI>Зубная паста.</LI>
+</UL>
+</OL>
+<h2 align="center"> Таблица результатов сессии</h2>
+<input type="button" value="Средняя оценка" onclick="output()"/>
+<table border><tr ><td><center>ФИО</center></td><td colspan = "3" ><a href="2.html">Ковалёв Александр Александрович</a></td></tr>
+<tr ><td><img src="myphoto.jpg"/></td><td colspan = "3" ><center>Адрес: улица Садовая, дом 1</center></td></tr>
+<tr><td rowspan = "6"><center>1 семестр 2019/2020 уч. года</center></td>
+<td>Дата</td><td>Предмет</td><td>Оценка</td></tr>
+<tr><td>31.12.2019</td><td>АЛОЦВМ</td><td>7</td></tr>
+<tr><td>05.01.2020</td><td>Физика</td><td>7</td></tr>
+<tr><td>11.01.2020</td><td>Математика</td><td>8</td></tr>
+<tr><td>16.01.2020</td><td>ОИТ</td><td>9</td></tr>
+<tr><td>22.01.2020</td><td>ОАиП</td><td>8</td></tr></table>
+
+<h1>Выберите необходимую функцию:</h1>
+<ol>
+<li><input type='button' value='Ввести своё имя' onclick='vivod()'/>
+<li><input type='button' value='Сложить два числа' onclick='sumnumbers()'/>
+Результат: 
+<br><span  id="resultsumone"> Содержимое перового тега span</span><br>
+<li><input type='button' value='Сложить две строки' onclick='sumstring()'/>
+Результат: 
+<br><span  id="resultsumtwo"></span><br>
+<li><input type='button' value='Сложить строку и число' onclick='sumstringnumber()'/>
+Результат: 
+<br><span  id="resultsumthr"></span><br>
+<li><input type='button' value='Сложить число и строку' onclick='sumnumberstring()'/>
+Результат: 
+<br><span  id="resultsumfour"></span><br>
+<li><input type='button' value='Результатом сложения строки и числа всегда будет …' onclick='vivod2()'/>
+<li><input type='button' value='Найти значение выражений ((35 * y-25 * x) / 5 + 232) и ((8 * y / x + 5 * x / y – 43)*6) ' onclick='vira()'/> 
+Результат: 
+<br><span  id="resulta"></span><br>
+<span  id="resultb"></span><br>
+<span  id="resultc"></span>
+<li><input type='button' value='IFELSE' onclick='ifelse()'/>
+<li><input type='button' value='IFELSEIF' onclick='ifelseif()'/>
+<li><input type='button' value='IFELSE(альтернативная конструкция)' onclick='ifelseifalt()'/>
+<li><input type='button' value='Какой день недели?' onclick='whichday()'/>
+Результат: 
+<br><span  id="nameday"></span><br>
+<li><input type='button' value='Пример работы try..catch' onclick='trycatch()'/>
+<li><input type='button' value='Вывод элементов страницы' onclick='out()'/>
+<li><input type='button' value='Вывод дочерних элементов тега body' onclick='out1()'/>
+<li><input type='button' value='Вывод содержимое первого тега span (коллекция all)' onclick='outSpan1()'/>
+<li><input type='button' value='Вывод содержимое первого тега span (частная коллекция)' onclick='outSpan()'/>
+<li><input type='button' value='Вывод содержимое первого тега span (идентификатор)' onclick='outSpan2()'/>
+</ol>
+</body>
+</html>

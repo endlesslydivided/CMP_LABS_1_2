@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 2</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function tabletd()
+{
+var a = Number(prompt("Введите значение переменной a"));
+var b = Number(prompt("Введите значение переменной b"));
+document.write('<table style="border:2px solid black;border-collapse:collapse ">');
+for(i = 1; i < a + 1; i++)
+{
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+
+for(l = 1; l < b + 1; l++)
+{
+x = a*b;
+document.write('<td style="border:2px solid black;" >'+ (i * l) + '</td>');
+}
+
+document.write('</tr>');
+}
+document.write('</table>');
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="Таблица чисел" onclick="tabletd()"/>
+
+</body>
+
+
+</html>

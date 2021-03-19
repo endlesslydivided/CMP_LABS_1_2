@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<TITLE>XML 5</TITLE>
+</head>
+<body>
+<input type="file" onchange="processFiles(this.files)"><br/>
+<span id="inputButton"></span>
+<span id="output"></span>
+<script type="text/javascript">
+function processFiles(files) { 
+var file = files[0];
+output = document.getElementById("output");
+var reader = new FileReader(); 
+reader.readAsText(file); 
+ reader.onload = function (e)
+ {
+xml = e.target.result;
+if (window.DOMParser) 
+{ 
+parser=new DOMParser();
+xmlDOC=parser.parseFromString(xml, "application/xml");
+}
+else 
+{
+xmlDOC=new ActiveXObject("Microsoft.XMLDOM");
+xmlDOC.async=false;
+xmlDOC.loadXML(xml);
+}
+buttonin = document.getElementById("inputButton");
+buttonin.innerHTML = " " ;
+buttonin.innerHTML += '<input type="button" value="Вывести информацию о студенте"onclick="show()">';
+}
+}
+function show() { 
+do{
+number1 = prompt("Введите число меньше или равное 8:")
+}while(number1 > 7 || number1 < 0)
+studentsList = xmlDOC.getElementsByTagName("STUDENT"); 
+var student = studentsList[number1];
+ output.innerHTML = "";
+ output.innerHTML += "<h2>Студент группы номер 4</h2>"
+ output.innerHTML += "<li>Имя студента:" + student.getElementsByTagName("NAME")[0].innerHTML +'<br/>'; 
+ output.innerHTML += "<li>Фамилия студента:" + student.getElementsByTagName("SURNAME")[0].innerHTML +'<br/>'; 
+ output.innerHTML += "<li>Отчество студента:" + student.getElementsByTagName("MIDDLE_NAME")[0].innerHTML +'<br/>'; 
+ output.innerHTML += "<li>Оценка:" + student.getElementsByTagName("GRADE")[0].innerHTML +'<br/>'; 
+  output.innerHTML += "<li>Год рождения:" + student.getElementsByTagName("BIRTH_YEAR")[0].innerHTML +'<br/>'; 
+}
+</script>
+</body>
+</html>

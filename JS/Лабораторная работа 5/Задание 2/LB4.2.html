@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 4</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function Student(name,surname,physics,math,IT)
+{
+this.name = name;
+this.surname = surname;
+this.physics = physics;
+this.math = math;
+this.IT= IT;
+this.add_FN = function add_FN(nameFN,surnameFN)
+{
+this.name = nameFN;
+this.surname = surnameFN;
+}
+this.average = function average()
+{
+let ave = 0;
+ave = Number((this.physics + this.math + this.IT)/3);
+document.getElementById('average').innerHTML = ('Средняя оценка студета с именем '+this.name +' '+ this.surname +' равна '+ave);
+}
+this.show = function show()
+{
+alert(this.name +' '+ this.surname);
+}
+}
+function Student1()
+{
+st1 = new Student(prompt('Введите имя'),prompt('Введите фамилию'),Number(prompt('Введите оценку по физике:')),Number(prompt('Введите оценку по математике:')),Number(prompt('Введите оценку по информатике:')));
+document.getElementById('addstoup1').innerHTML = (st1.name + ' ' + st1.surname+ ' ' + st1.physics+ ' ' + st1.math +  ' ' + st1.IT);
+}
+function Student2()
+{
+st2 = new Student(prompt('Введите имя'),prompt('Введите фамилию'),Number(prompt('Введите оценку по физике:')),Number(prompt('Введите оценку по математике:')),Number(prompt('Введите оценку по информатике:')));
+document.getElementById('addstoup2').innerHTML = (st2.name + ' ' + st2.surname+ ' ' + st2.physics+ ' ' + st2.math +  ' ' + st2.IT);
+}
+function Student3()
+{
+st3 = new Student(prompt('Введите имя'),prompt('Введите фамилию'),Number(prompt('Введите оценку по физике:')),Number(prompt('Введите оценку по математике:')),Number(prompt('Введите оценку по информатике:')));
+document.getElementById('addstoup3').innerHTML = (st3.name + ' ' + st3.surname+ ' ' + st3.physics+ ' ' + st3.math +  ' ' + st3.IT);
+}
+function averageST()
+{
+switch(Number(prompt("Введите номер студента, среднюю оценку которого необходимо узнать")))
+{
+case 1:st1.average();break;
+case 2:st2.average();break;
+case 3:st3.average();break;
+}
+}
+function show()
+{
+switch(Number(prompt("Введите номер студента, имя которого необходимо узнать")))
+{
+case 1:st1.show();break;
+case 2:st2.show();break;
+case 3:st3.show();break;
+}
+}
+function add()
+{
+Student.prototype.group = this.group;
+st1.group = prompt("Введите название группы студента c именем " + ' ' + st1.name + ' ' + st1.surname);
+st2.group = prompt("Введите название группы студента c именем " + ' ' + st2.name + ' ' + st2.surname);
+st3.group = prompt("Введите название группы студента c именем " + ' ' + st3.name + ' ' + st3.surname);
+document.getElementById('addstoup1').innerHTML = (st1.name + ' ' + st1.surname+ ' ' + st1.physics+ ' ' + st1.math +  ' ' + st1.IT +  ' ' + st1.group);
+document.getElementById('addstoup2').innerHTML = (st2.name + ' ' + st2.surname+ ' ' + st2.physics+ ' ' + st2.math +  ' ' + st2.IT +  ' ' + st2.group);
+document.getElementById('addstoup3').innerHTML = (st3.name + ' ' + st3.surname+ ' ' + st3.physics+ ' ' + st3.math +  ' ' + st3.IT +  ' ' + st3.group);
+}
+function ins()
+{
+if ('surname' in st1)
+{
+document.getElementById('insres').innerHTML = ('Свойство surname есть у объекта st1');
+}
+else
+{
+document.getElementById('insres').innerHTML = ('Свойство surname отсутсвует у объекта st1');
+}
+}
+</script>
+</head>
+<body>
+
+<input type='button' value='Добавить студента №1' onclick='Student1()'/>
+Результат: <span id='addstoup1'></span>
+<input type='button' value='Добавить студента №2' onclick='Student2()'/>
+Результат: <span id='addstoup2'></span>
+<input type='button' value='Добавить студента №3' onclick='Student3()'/>
+Результат: <span id='addstoup3'></span>
+<input type='button' value='Средняя оценка студента' onclick='averageST()'/>
+Результат: <span id='average'></span>
+<input type='button' value='Вывести имя студента' onclick='show()'/>
+<input type='button' value='Добавить ещё одно значение' onclick='add()'/>
+<input type='button' value='Есть ли свойство surname у объекта st1?' onclick='ins()'/>
+Результат: <span id='insres'></span>
+
+</body>
+
+
+</html>

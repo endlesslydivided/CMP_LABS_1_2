@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE>Лабораторная номер 11</TITLE>
+<link rel="stylesheet" href="tablestyle.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+$("#textCC").mouseover(function(){
+$("#textCC").css("color","rgb("+(Math.random() * 255 + 0)+","+(Math.random() * 255 + 0)+","+(Math.random() * 255 + 0)+")")})
+});
+
+$(document).ready(function(){
+$("#textCS").click(function(){
+$("#textCS").css("font-size",""+(Math.random() * 50 + 25)+"px")})
+});
+
+$(document).ready(function(){choose_one = 1;$("#photos").html("<img src='dog1.jfif'>");
+$("#photos").click(function(){
+switch(choose_one)
+{
+case 0:$("#photos").html("<img src='dog1.jfif'>");choose_one++;break;
+case 1:$("#photos").html("<img src='dog2.gif'>");choose_one++;break;
+case 2:$("#photos").html("<img src='dog3.jfif'>");choose_one = 0;break;
+}
+})
+});
+$(document).ready(function(){choose_two = 1;$("#photosText").html("<img id='pesIMG' src='pes.jpg'>");
+$("#photosText").click(function(){
+switch(choose_two)
+{
+case 0:$("#photosText").html("<img id='pesIMG' src='pes.jpg'>");choose_two++;break;
+case 1:$("#photosText").html("Текст");choose_two = 0;break;
+}
+})
+});
+$(document).ready(function(){$("#poop").html("<img id='photosBigger' src='pes.jpg' style='height:325px;width:325px'>");
+$("#photosBigger").mouseover(function(){
+$("#photosBigger").css({"height":"400px","width":"400px"});
+});
+$("#photosBigger").mouseout(function(){
+$("#photosBigger").css({"height":"325px","width":"325px"});
+})
+
+});
+$(document).ready(function(){choose_three = 0;
+$("#paragraph").dblclick(function(){
+switch(choose_three)
+{
+case 0:$("#paragraph").css("border","2px black double");choose_three++;break;
+case 1:$("#paragraph").css("border","none");choose_three = 0;break;
+}
+})
+});
+
+</script>
+
+<script type="text/javascript" defer>
+$(document).ready(function(){
+$("#myimg").draggable();
+});
+
+$(document).ready(function(){
+$("#mytext").dblclick (function(){
+$("#mytext").mousedown(function(){
+$("#mytext").draggable({cancel: null});
+})
+})
+$("#mytext").mouseover(function(){
+$("#mytext").mouseout(function(){
+$("#mytext").draggable( "destroy" );
+});
+});
+});
+</script>
+
+<script type="text/javascript" defer>
+i = 0
+$(document).ready(function(){
+$("#myimg").click(function(){
+if(i == 0)
+{$("#myimg").animate({left:500},1000);i++}
+else if(i == 1)
+{$("#myimg").animate({top:500},1000);i++}
+else if(i == 2)
+{$("#myimg").animate({left:10},1000);i++}
+else if(i == 3)
+{$("#myimg").animate({top:10},1000);i=0}
+})});
+
+</script>
+
+
+</head>
+<BODY id = "mybody" >
+<span id="textCC" class="CLparagraph">Текст</span><br>
+<span id="textCS" class="CLparagraph">Текст</span><br>
+<span id="photos"></span><br>
+<span id="photosText" ></span><br>
+<span id="poop" ></span><br>
+<p id="paragraph" class="CLparagraph"  > Абзац </p>
+<IMG ID="myimg" SRC = "dog2.gif"  style= "position:absolute; top:10; left:10">
+<textarea ID="mytext" style= "position:absolute; top:10; left:300">Текст</textarea>
+
+<IMG ID="myimg" SRC = "kitty.jpg"  style= "top:10; left:10;width:200px;height:200px;">
+</BODY>
+
+</HTML>

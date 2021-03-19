@@ -1,0 +1,103 @@
+div
+{
+display:flex;
+
+}
+.row
+{
+	flex-direction:column;
+}
+.row div div
+{
+flex-direction:row;
+width: 100px;
+height: 100px;
+border:2px solid black;
+margin:-1px 0 0 -1px;
+}
+
+.row div:nth-child(even) div:nth-child(odd)
+{
+	background:black;
+}
+
+.row div:nth-child(odd) div:nth-child(even)
+{
+	background:black;
+}
+.row div:nth-child(even) div:nth-child(odd):hover
+{
+	background:black;
+	  background-position: 0 0;
+	animation: background 0.5s forwards ease-in-out ;
+	animation-direction:alternate;
+}
+.row div:nth-child(odd) div:nth-child(even):hover
+{
+	background:black;
+	background-position: 0 0;
+	animation: background 0.5s forwards  ease-in-out ;
+	animation-direction:alternate;
+	
+
+}
+.row div:first-child div
+{
+width: 100px;
+height: 50px;
+animation-name:none !important;
+background:rgb(153, 255, 102) !important;
+}
+.row div:last-child div
+{
+width: 100px;
+height: 50px;
+animation-name:none !important;
+background:rgb(153, 255, 102) !important;
+}
+
+
+.row div  div:first-child
+{
+background:rgb(153, 255, 102) !important;
+flex-basis:50px;
+animation-name:none !important;
+}
+
+.row div  div:last-child
+{
+background:rgb(153, 255, 102) !important;
+flex-basis:50px;
+animation-name:none !important;
+}
+
+
+
+.row div:first-child  div:first-child
+{
+width: 50px;
+height: 50px;
+}
+.row div:first-child  div:last-child
+{
+width: 50px;
+height: 50px;
+}
+.row div:last-child  div:last-child
+{
+width: 50px;
+height: 50px;
+}
+.row div:last-child div:first-child  
+{
+width: 50px;
+height: 50px;
+}
+
+@keyframes background {
+  100% {
+    transform:scale(1.5);
+	opacity:1;
+	box-shadow: -50px 50px 100px black;
+  }
+  

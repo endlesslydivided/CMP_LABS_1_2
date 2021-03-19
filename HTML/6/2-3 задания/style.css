@@ -1,0 +1,63 @@
+body
+{
+background:linear-gradient(45deg,rgb(204, 102, 204,0.9),rgb(77, 180, 255,0.7),rgb(255, 255, 255,0.1)),url(base4.jpg);
+background-repeat:no-repeat;
+background-size: 1750px 900px;
+}
+#center{
+	text-align:center;
+}
+#text{
+	text-shadow:2px 1px 5px rgb(0, 255, 0);
+	font-family:samsung;
+}
+.white{
+	text-shadow:1px 1px 5px rgb(255, 255, 255);}
+#font{
+	font-family:samsung;
+}
+#text1{
+	text-shadow:1px 1px 15px red;
+	font-family:samsung;
+	text-align:center;
+}
+#text2{
+	text-shadow:1px 1px 5px rgb(90,40,0,0.5);
+	font-family:samsung;
+}
+.d4{
+	border:10px solid transparent;
+	border-image:10 linear-gradient(0deg,#c6ffb3,#ffffb3,#ccf5ff);
+	box-shadow: 5px 5px 20px;
+	padding:20px;
+	margin-right:20px;
+	margin-left:-5px;
+}
+.d2:hover{
+	-webkit-transform:skewX(-10deg);
+	transition:all 0.5s ;
+}
+.d3:hover{
+	-webkit-transform:scale(1.02,1.02);
+	transition:all 1.0s ;
+
+}
+@font-face{
+	font-family:samsung;
+	src:url("SamsungSharpSansBd.woff2");
+}
+#image1:hover{	-webkit-transform:skewX(-10deg);
+	transition:all 0.5s;
+}
+
+#image2:hover{-webkit-transform:translateX(15px);
+transition:all 0.5s; 
+}
+#image3:hover{-webkit-transform:rotate(360deg);
+transition:all 1.5s;}
+#image4:hover{-webkit-transform:scale(1.2,1.2);
+transition:all 0.5s; }
+td{text-align:center;
+}
+table{width:900px;
+margin-left:320px;}

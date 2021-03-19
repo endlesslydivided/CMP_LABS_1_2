@@ -1,0 +1,157 @@
+@font-face
+{
+	font-family:SamsO;
+	src:url("zncog-el4me.ttf");
+}
+@font-face
+{
+	font-family:samsung;
+	src:url("SamsungSharpSans.ttf");
+}
+@font-face
+{
+	font-family:Striped;
+	src: url("14692.ttf");
+}
+.hide p
+{
+	font-size: 40px;
+	word-spacing: 10px;
+}
+.container  h1
+{
+font-family:Striped;
+color:	rgb(255, 102, 102);
+text-align:center;
+animation: text 5s infinite ease-in-out;
+}
+.hide
+{
+visibility:visible;
+}
+.back
+{
+
+	background-repeat:repeat-y;
+	background-size:5%;
+	background-position:right;
+	background-position:right;
+}
+.h2zag
+{
+	text-align:center;
+	font-family:calibri;
+	font-size: 30px;
+}
+.container 
+{
+
+    max-width: 3000px;
+	 flex: 1;
+	  flex-direction: column
+  }
+.imgsize
+{
+	height: 300px;
+	width:400px;
+	float:left;
+	margin-right: 10px;
+}
+.row {
+    display: flexbox;
+    display: flex; 
+	flex-wrap: wrap; 
+	align-items: flex-start;
+     justify-content:center;
+  }
+li
+{
+	padding:10px;
+}
+.col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+	height: 100%;  
+  }
+.col__aside
+{
+	order:2;
+}
+.col__article
+{
+	font-size: 35px;
+}
+ .col__article, .col__aside 
+ {
+    flex: 1 1 100%;
+    max-width: 100%;
+	font-family:Samso;
+	
+ }
+ .hfshow, ul
+{
+display:none;
+}
+@media (min-width: 992px)
+{
+ul
+{display:block;
+} 
+.imgsize
+{
+	height: 150px;
+	width:200px;
+	float:left;
+	margin-right: 10px;
+}
+.row 
+{
+	flex-wrap:nowrap; 
+}
+.col__article 
+{
+      flex: 0 0 75%;
+      max-width: 75%;
+	  order:2;
+	  font-size: 15px;
+ }
+.col__aside 
+{
+     flex: 0 0 25%;
+     max-width: 25%;
+	 background:linear-gradient(45deg,rgb(255, 153, 102),	rgb(255, 0, 255));
+	 order:1;
+	 
+}
+.hfshow
+{
+display:block;
+background-color:rgb(204, 255, 255);
+border:10px solid rgb(204, 255, 255);
+padding-right: 15px;
+padding-left: 15px;
+}
+.back
+{
+		background-image:url(ball.png);
+}
+.hide
+{
+visibility:hidden;
+}
+
+.col__aside .hide
+{
+	display:none;
+}
+@keyframes text
+{
+0%{color:	rgb(255, 102, 102);}
+20% {color:	rgb(255, 153, 102);}
+40% {color:rgb(255, 217, 102);}
+60% {color:rgb(140, 255, 102);}
+80% {color:rgb(102, 255, 255);}
+100% {color:rgb(255, 102, 102);}
+}

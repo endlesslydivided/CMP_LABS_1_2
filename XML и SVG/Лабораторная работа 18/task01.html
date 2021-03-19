@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>SVG 1</title>
+</head>
+<body>
+
+<h1 style="font-family:calibri">Задание 1</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle r="45" cx="100" cy="70" fill="coral">
+<animate attributeName="cx" values="100;250;100" dur="3s"
+begin="0s" repeatCount="indefinite" />
+</circle>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle r="45" cx="100" cy="70" fill="mediumspringgreen">
+<animate attributeName="r" values="45;70;45" dur="3s"
+begin="0s" repeatCount="indefinite" />
+</circle>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect x="2" y="40" cy="70" width="150" height="60" fill="salmon">
+<animate attributeName="x" values="2;80;2" dur="2s" repeatCount="indefinite" />
+<animate attributeName="fill" values="salmon;skyblue;khaki;mediumspringgreen;salmon" dur="3s" repeatCount="indefinite" />
+</circle>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect x="20" y="40" cy="70" width="150" height="60" fill="tomato" stroke="lime" stroke-width="3">
+<animate attributeName="stroke-width" values="3;15;3" dur="2s" repeatCount="indefinite" />
+</rect>
+</svg>
+
+<h1 style="font-family:calibri">Задание 2</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle r="45" cx="100" cy="70" fill="mediumspringgreen">
+<animateTransform attributeName="transform" attributeType="XML"
+type="skewX" values="1;50;1" dur="1s" repeatCount="indefinite" fill="freeze"/>
+</circle>
+</svg>
+
+<h1 style="font-family:calibri">Задание 3</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300">
+
+<circle r="45" cx="100" cy="70" fill="lavender" stroke-dasharray="281" stroke-dashoffset="252" stroke="mediumspringgreen" stroke-width="3">
+<animateTransform attributeName="transform" attributeType="XML" type="scale" values="1;2;1" dur="2s" begin="mouseover" end="mouseout" repeatCount="indefinite" fill="freeze" />
+<animate  attributeName="stroke-dashoffset" repeatCount="indefinite" from="235" to="0" dur="5s"/> 
+<animate attributeName="stroke-width" from="0" to="10"dur="5s" repeatCount="indefinite"/>
+<animate attributeName="stroke-dashoffset" from="281" to="0"dur="5s" repeatCount="indefinite"/></circle>
+</circle>
+
+<h1 style="font-family:calibri">Задание 5</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="600">
+<circle id="myelement" r="45" cx="100" cy="70" stroke-dasharray="23.5 8" fill="mediumspringgreen" stroke="salmon" stroke-width="5">
+<animate  attributeName="stroke-dashoffset" repeatCount="indefinite" from="0" to="180" dur="5s"/> 
+</circle>
+</svg>
+<svg width="600" height="600">
+<rect fill="lavender" width="100%" height="100%"/>
+<style>
+.col-1{fill:salmon;stroke:violet;stroke-width:10}
+.col-2{fill:violet;stroke:khaki;stroke-width:7}
+.col-3{fill:khaki;stroke:lightskyblue;stroke-width:4}
+.col-4{fill:lightskyblue;stroke:mediumspringgreen;stroke-width:7}
+.col-5{fill:mediumspringgreen;stroke:salmon;stroke-width:10}
+</style>
+<defs>
+<path id="camera" d="M29.688 59.375c0 11.218 9.094 20.313
+20.313 20.313s20.313-9.094 20.313-20.313-9.094-20.313-20.313-
+20.313-20.313 9.094-20.313 20.313zM93.75 25h-21.875c-1.563-6.25-
+3.125-12.5-9.375-12.5h-25c-6.25 0-7.813 6.25-9.375 12.5h21.875c-3.438 0-6.25 2.813-6.25 6.25v56.25c0 3.438 2.813 6.25
+6.25 6.25h87.5c3.438 0 6.25-2.813 6.25-6.25v-56.25c0-3.438-
+2.813-6.25-6.25-6.25zM50 87.109c-15.317 0-27.734-12.417-27.734-
+27.734 0-15.317 12.417-27.734 27.734-27.734 15.318 0 27.734
+12.417 27.734 27.734 0 15.318-12.417 27.734-27.734 27.734zM93.75
+43.75h-12.5v-6.25h12.5v6.25z"/>
+</defs>
+<svg width="600" height="600" viewBox="0 0 200 200">
+<use xlink:href="#camera" class="col-1" x="0" y="0" />
+</svg>
+</svg>
+</body>
+</html>

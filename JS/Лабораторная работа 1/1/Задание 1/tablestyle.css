@@ -1,0 +1,49 @@
+.cont1 td
+{
+	padding: 10px;
+	font-family: calibri;
+	text-align:right;
+}
+.cont1 td:after
+{
+	content:'|';
+	color: red;
+}
+.cont1 a:hover
+{
+	color:red;
+}
+.cont1 a
+{
+text-decoration:none;
+color:black;
+}
+
+.cont2 div
+{
+	display:inline-block;
+	padding:10px;
+	border-right:3px solid red;
+	margin-top:10px;
+	font-family: calibri;
+}
+.cont2 div:last-child
+{
+	display:inline-block;
+	padding:10px;
+	border-right:0px solid red;
+	margin-top:10px;
+	font-family: calibri;
+}
+.cont2 a:hover
+{
+	color:red;
+}
+.cont2 a
+{
+text-decoration:none;
+color:black;
+}
+
+
+

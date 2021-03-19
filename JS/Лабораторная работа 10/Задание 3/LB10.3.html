@@ -1,0 +1,54 @@
+<html>
+<head>
+<TITLE>Перемещаемое изображение</TITLE>
+</head>
+<BODY id = "mybody" >
+<div style="padding:1000px">
+<IMG ID="myimg" SRC = "kitty.jpg"  style= "position:absolute;margin:100px">
+</div>
+<script type="text/javascript" async>
+var kitty = document.getElementById('myimg');
+let i = 10;
+let l = 0;
+let kittyX = 1;
+let kittyY = 1;
+kitty.style.left = i*25;
+kitty.style.top = Math.sin(i) *50;
+kitty.onclick = function()
+{
+document.body.appendChild(kitty);
+kitty.style.zIndex = 1000;
+inter = setInterval("moveAt()" , 50);
+
+}
+function moveAt() 
+{
+if(l == 0 && i < 50)
+{
+kittyY = 50* Math.sin(i);
+kitty.style.left = i*25;
+kitty.style.top = kittyY ;
+i++;
+if(i == 50)
+{
+clearInterval(inter);
+l++;
+}
+}
+if(l == 1 && i > 10 )
+{
+kittyY = 50* Math.sin(i);
+kitty.style.left = i*25;
+kitty.style.top = kittyY ;
+i--;
+if(i == 10)
+{
+clearInterval(inter);
+l=0;
+}
+}
+}
+</script>
+</BODY>
+
+</HTML>

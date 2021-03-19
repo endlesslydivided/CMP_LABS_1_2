@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 7</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function resetF()
+{
+document.forms.data.Name.value = ' ';	
+document.forms.data.Surname.value = ' ';
+document.forms.data.specialization.value = ' ';
+document.forms.data.course.value = ' ';
+for (var i = 8;i < 14;i++)
+{
+	if(document.forms.data.elements[i].checked)
+	{	
+      document.forms.data.elements[i].checked = false;	
+	}
+}
+for (var i = 4;i < 8;i++)
+{
+	if(document.forms.data.elements[i].checked)
+	{	
+		document.forms.data.elements[i].checked = false;	
+	}
+}
+document.getElementById('printme').innerHTML = ' ' ;
+
+}
+function printF()
+{
+document.getElementById('printme').innerHTML = ' ' ;
+let  name = document.forms.data.Name.value;
+let  surname = document.forms.data.Surname.value;
+let  fac = document.forms.data.specialization.value;
+let  course = document.forms.data.course.value;
+let subj = new Array();
+for (var i = 8;i < 14;i++)
+{
+	if(document.forms.data.elements[i].checked)
+	{	
+		subj.push(document.forms.data.elements[i].value);	
+	}
+}
+
+let text = document.getElementById('printme');
+text.innerHTML += '<h1>Факультет информационных технологий</h1>';
+text.innerHTML = text.innerHTML + ' ' + ('<p>Студент <span style = "text-decoration:underline;" >'+ surname + '</span> специальность <span style = "text-decoration:underline;" >' + fac + '</span> курс <span style = "text-decoration:underline;" >' + course +'</span> должен сдавать следующие предметы:</p>');
+text.innerHTML = text.innerHTML +('<ol>');
+for(var i = 0; i < subj.length;i++)
+{
+text.innerHTML = text.innerHTML +('<li>'+ subj[i] +'</li>');
+}
+text.innerHTML = text.innerHTML +('</ol>');
+}
+
+function create()
+{
+let subj = new Array();
+for (var i = 8;i < 14;i++)
+{
+	if(document.forms.data.elements[i].checked)
+	{	
+		subj.push(document.forms.data.elements[i].value);	
+	}
+}
+document.write('<select>');
+for(var i = 0; i < subj.length;i++)
+{
+document.write('<option>'+ subj[i] +'</option>');
+}
+document.write('</select>');
+}
+</script>
+</head>
+<body>
+
+<form name='data'>
+<fieldset>
+<legend>Анкета</legend>
+<textarea></textarea><br>
+<input type="text" value="Имя" name="Name"/><br>
+<input type="text" value="Фамилия" name="Surname"/><br>
+Специальность:<select name="specialization">
+<option>ПОИТ</option>
+<option>ИСиТ</option>
+<option>ПОИБМС</option>
+<option>ДЭВИ</option>
+</select>
+<br>Курс:<br>
+<input type='radio' name='course' value='1'/>1
+<input type='radio' name='course' value='2'/>2
+<input type='radio' name='course' value='3'/>3
+<input type='radio' name='course' value='4'/>4
+<br>Предметы:<br>
+<input type='checkbox' name='subject' value='ОИТ'>ОИТ</input>
+<input type='checkbox' name='subject' value='ОАП'>ОАП</input>
+<input type='checkbox' name='subject' value='История'>История</input>
+<input type='checkbox' name='subject' value='Физика'>Физика</input>
+<input type='checkbox' name='subject' value='Математика'>Математика</input><br>
+<input type='submit'  value='submit' />
+<input type='button'  value='reset' onclick='resetF()'/><br>
+<input type='button'  value='Напечатать' onclick='printF()'/>
+</fieldset>
+</form>
+<span id="printme"></span>
+<input type='button'  value='Создать список' onclick='create()'/>
+<form name='data1'>
+<div id="printFace"/>
+</form>
+
+</body>
+
+
+</html>

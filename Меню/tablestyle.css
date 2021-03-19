@@ -1,0 +1,90 @@
+body
+{
+	margin:0;
+	padding-left:20px;
+	background: linear-gradient(0deg,LightSkyBlue,mediumspringgreen);
+}
+.menu-item{
+position: relative;
+cursor: pointer;
+display:inline-block;
+width:19.5%;
+font-family:samsung;
+text-align:center;
+font-size:20px;
+}
+.menu-item a{
+text-decoration :none;
+}
+.menu-item .submenu
+{
+border-radius:30px;
+width: 70%;
+background: radial-gradient(rgb(242, 242, 242),rgb(217, 217, 217));
+position: absolute;
+cursor: pointer;
+margin-top:2px;
+margin-left:45px;
+font-size:15px;
+display:none;
+}
+.menu-item .submenu .submenu
+{
+border-radius:30px;
+width: 50%;
+background: radial-gradient(rgb(242, 242, 242),rgb(217, 217, 217));
+position: absolute;
+cursor: pointer;
+margin-top:-50px;
+margin-left:210px;
+font-size:15px;
+display:none;
+}
+.menu-item:hover .submenu
+{
+display:block;
+}
+
+.menu-item:hover .submenu .subsubmenu   .submenu
+{
+display:none;
+}
+.menu-item:hover  .submenu .subsubmenu:hover .submenu
+{
+display:block;
+}
+.menu-item:nth-child(1)
+{
+	background: #88ff4d;
+}
+.menu-item:nth-child(2)
+{
+	background: rgb(210, 255, 77);
+}
+.menu-item:nth-child(3)
+{
+	background: rgb(255, 210, 77);
+}
+.menu-item:nth-child(4)
+{
+	background: coral;
+}
+.menu-item:nth-child(5)
+{
+	background: BlueViolet;
+}
+@font-face
+{
+	font-family:SamsO;
+	src:url("Шрифты/zncog-el4me.ttf");
+}
+@font-face
+{
+	font-family:samsung;
+	src:url("Шрифты/SamsungSharpSans.ttf");
+}
+@font-face
+{
+	font-family:Striped;
+	src: url("Шрифты/14692.ttf");
+}

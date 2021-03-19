@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 3</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function output()
+{
+let mass = ["pow","pop","push","shift","round","floor","slince","sort"];
+
+arrayMass = new Array(); 
+arrayMass = mass.slice(1,4);
+arrayMass[3] = mass[6];
+arrayMass[4] = mass[7];
+
+mathMass = new Array();
+mathMass = mass.slice(4,6);
+mathMass[2] = mass[0];
+let oneMath =["sqrt"];
+let mathMassLast = oneMath.concat(mathMass);
+let lengthArray = arrayMass.push("concat");
+let lengthMath = mathMassLast.length;
+
+document.write('<span>Исходный массив:<br/>');
+for(i = 0; i < mass.length;i++)
+{
+document.write(mass[i] + '<br/>');
+}
+document.write('Размер исходного массива: ' + mass.length + '</span><br/><br/>');
+
+document.write('<span>Первый массив:<br/>');
+for(i = 0; i < lengthArray;i++)
+{
+document.write(arrayMass[i] + '<br/>');
+}
+document.write('Размер первого массива: ' + lengthArray + '</span><br/><br/>');
+
+document.write('<span>Второй массив:<br/>');
+for(i = 0; i < lengthMath;i++)
+{
+document.write(mathMassLast[i] + '<br/>');
+}
+document.write('Размер второго массива: ' + lengthMath + '</span><br/><br/>');
+}
+
+
+</script>
+</head>
+<body>
+
+<input type='button' value='Массив элементов' onclick='output()'/>
+
+</body>
+
+
+</html>

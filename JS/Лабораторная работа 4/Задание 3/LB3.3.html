@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 3</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function output()
+{
+let FN = new String(prompt("Введите своё ФИО."));
+let FNU = new String;
+let FNL = new String;
+let FNCON = new String;
+let legth = new Number;
+let frep = new String;
+FNU = FN.toUpperCase();
+FNL = FN.toLowerCase();
+FNCON = FNU.concat(FNL);
+length = FN.length;
+document.write(FN + "<br/>");
+document.write(FNU + "<br/>");
+document.write("Длина строки: " + length + "<br/>");
+document.write(FNL + "<br/>");
+document.write(FNCON + "<br/>");
+frep = FN.replace("Ковалёв Александр Александрович","КАА");
+document.write(frep + "<br/>");
+
+
+}
+
+
+</script>
+</head>
+<body>
+
+<input type='button' value='Введите своё ФИО' onclick='output()'/>
+
+</body>
+
+
+</html>

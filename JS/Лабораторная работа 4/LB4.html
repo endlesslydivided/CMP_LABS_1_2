@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 3</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function output()
+{
+let mass = [6*Math.PI + 3*Math.exp(8), 2*Math.cos(4) + Math.cos(12) +8*Math.exp(3), 3* Math.sin(9)+ Math.log(5)+ Math.sqrt(3),2*Math.tan(5)+ 6*Math.PI + Math.sqrt(12)];
+let min = Math.pow(2,56);
+let max = 0;
+let positionOne = 0;
+let positionTwo = 0;
+for(i = 0;i < 4;i++)
+{
+document.write('<span>' + mass[i] + '</span><br/>');
+if(mass[i] < min)
+{
+min = mass[i];
+positionOne = i;
+}
+if(mass[i] > max)
+{
+max = mass[i];
+positionTwo = i;
+}
+}
+document.write('<span> Минимальный элемент массива:' + min + '. Номер этого элемента: '  + positionOne +'<br/>Максимальный элемент массива:' + max + '. Номер этого элемента: ' + positionTwo + '</span>');
+}
+
+function output2()
+{
+let mass = ["pow","pop","push","shift","round","floor","slince","sort"];
+
+arrayMass = new Array(); 
+arrayMass = mass.slice(1,4);
+arrayMass[3] = mass[6];
+arrayMass[4] = mass[7];
+
+mathMass = new Array();
+mathMass = mass.slice(4,6);
+mathMass[2] = mass[0];
+let oneMath =["sqrt"];
+let mathMassLast = oneMath.concat(mathMass);
+let lengthArray = arrayMass.push("concat");
+let lengthMath = mathMassLast.length;
+
+document.write('<span>Исходный массив:<br/>');
+for(i = 0; i < mass.length;i++)
+{
+document.write(mass[i] + '<br/>');
+}
+document.write('Размер исходного массива: ' + mass.length + '</span><br/><br/>');
+
+document.write('<span>Первый массив:<br/>');
+for(i = 0; i < lengthArray;i++)
+{
+document.write(arrayMass[i] + '<br/>');
+}
+document.write('Размер первого массива: ' + lengthArray + '</span><br/><br/>');
+
+document.write('<span>Второй массив:<br/>');
+for(i = 0; i < lengthMath;i++)
+{
+document.write(mathMassLast[i] + '<br/>');
+}
+document.write('Размер второго массива: ' + lengthMath + '</span><br/><br/>');
+}
+function output3()
+{
+let FN = new String(prompt("Введите своё ФИО."));
+let FNU = new String;
+let FNL = new String;
+let FNCON = new String;
+let legth = new Number;
+let frep = new String;
+FNU = FN.toUpperCase();
+FNL = FN.toLowerCase();
+FNCON = FNU.concat(FNL);
+length = FN.length;
+document.write(FN + "<br/>");
+document.write(FNU + "<br/>");
+document.write("Длина строки: " + length + "<br/>");
+document.write(FNL + "<br/>");
+document.write(FNCON + "<br/>");
+frep = FN.replace("Ковалёв Александр Александрович","КАА");
+document.write(frep + "<br/>");
+}
+function tabletd()
+{
+let x = new Date;
+document.write('<table style="border:2px solid black;border-collapse:collapse ">');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Год' +'</td>' +'<td style="border:2px solid black;" >'+ x.getFullYear() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Месяц' +'</td>' +'<td style="border:2px solid black;" >'+ (Number(x.getMonth()) + 1)  +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'День' +'</td>' +'<td style="border:2px solid black;" >'+ x.getDate() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Час' +'</td>' +'<td style="border:2px solid black;" >'+ x.getHours() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Минуты' +'</td>' +'<td style="border:2px solid black;" >'+ x.getMinutes() +'</td></tr>');
+document.write('<tr><td style="border:2px solid black;" >'+ 'Секунды' +'</td>' +'<td style="border:2px solid black;" >'+ x.getSeconds() +'</td></tr>');
+document.write('</table>');
+}
+document.getElementById('table').innerHtml = tabletd();
+</script>
+</head>
+<body>
+
+<input type='button' value='Массив' onclick='output()'/>
+<input type='button' value='Массив элементов' onclick='output2()'/>
+<input type='button' value='Введите своё ФИО' onclick='output3()'/>
+<span id="tabl"></span>
+</body>
+
+
+</html>

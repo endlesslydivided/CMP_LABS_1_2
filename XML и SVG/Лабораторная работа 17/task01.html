@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>SVG 1</title>
+</head>
+<body>
+<h1 style="font-family:calibri">Задание 1</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<polygon points ="5,135 115,5 235,135" fill="lime" stroke="purple" stroke-width="3"/>;
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle r="45" cx="100" cy="70" fill="cyan"/>;
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect x="5" y="25" width="200" height="100" fill="green" fill-opacity="0.4"/>;
+</svg>
+<h1 style="font-family:calibri">Задание 2</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<polygon points ="5,135 115,5 235,135" fill="grey" stroke="pink" stroke-width="5" transform="scale(0.9 0.3)" />;
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle r="25" cx="100" cy="70" fill="blue" transform= "skewX(-30),skewY(20)"/>;
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect x="5" y="25" width="100" height="50" fill="red" fill-opacity="0.7" transform= "rotate(45 50 150)"/>;
+</svg>
+<h1 style="font-family:calibri">Задание 3</h1>
+<svg>
+<defs>
+<linearGradient id ="MyGradient">
+<stop offset = "10%" stop-color = "salmon"/>
+<stop offset = "15%" stop-color = "coral"/>
+<stop offset = "40%" stop-color = "khaki"/>
+<stop offset = "55%" stop-color = "palegreen"/>
+<stop offset = "70%" stop-color = "lightskyblue"/>
+<stop offset = "95%" stop-color = "violet"/>
+</linearGradient>
+</defs>
+<ellipse rx="110" ry="30" cx="115" cy="70" fill="url(#MyGradient)"/>}
+</svg>
+<svg width="600" height="600">
+<rect fill="lavender" width="100%" height="100%"/>
+<style>
+.col-1{fill:salmon;stroke:violet;stroke-width:10}
+.col-2{fill:violet;stroke:khaki;stroke-width:7}
+.col-3{fill:khaki;stroke:lightskyblue;stroke-width:4}
+.col-4{fill:lightskyblue;stroke:mediumspringgreen;stroke-width:7}
+.col-5{fill:mediumspringgreen;stroke:salmon;stroke-width:10}
+</style>
+<defs>
+<path id="camera" d="M29.688 59.375c0 11.218 9.094 20.313
+20.313 20.313s20.313-9.094 20.313-20.313-9.094-20.313-20.313-
+20.313-20.313 9.094-20.313 20.313zM93.75 25h-21.875c-1.563-6.25-
+3.125-12.5-9.375-12.5h-25c-6.25 0-7.813 6.25-9.375 12.5h21.875c-3.438 0-6.25 2.813-6.25 6.25v56.25c0 3.438 2.813 6.25
+6.25 6.25h87.5c3.438 0 6.25-2.813 6.25-6.25v-56.25c0-3.438-
+2.813-6.25-6.25-6.25zM50 87.109c-15.317 0-27.734-12.417-27.734-
+27.734 0-15.317 12.417-27.734 27.734-27.734 15.318 0 27.734
+12.417 27.734 27.734 0 15.318-12.417 27.734-27.734 27.734zM93.75
+43.75h-12.5v-6.25h12.5v6.25z"/>
+</defs>
+<use xlink:href="#camera" class="col-1" x="300" y="300" transform="rotate(180 220 225)"/>
+<use xlink:href="#camera" class="col-2" x="130" y="-100" transform="skewY(50)"/>
+<use xlink:href="#camera" class="col-3" x="-240" y="220"  transform="skewX(60)"/>
+<use xlink:href="#camera" class="col-4" x="470" y="30" transform="scale(0.8 4)"/>
+<use xlink:href="#camera" class="col-5" x="460" y="440" transform="translate(5 50)"/>
+
+</body>
+</html>

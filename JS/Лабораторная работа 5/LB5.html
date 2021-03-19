@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 4</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function Gruppa(n,spec,kolich,course)
+{
+this.n = n;
+this.spec = spec;
+this.kolich = kolich;
+this.course = course;
+this.add_stud = function add_stud(k)
+{
+this.kolich += k;
+document.getElementById('addstudent').innerHTML = ('В группу номер ' + this.n + ' добавили ' + k + ' студентов(а)<br\>');
+}
+this.sub_stud = function sub_stud(k)
+{
+this.kolich -= k;
+document.getElementById('substudent').innerHTML = ('Из группы номер ' + this.n + ' исключили ' + k + ' студентов(а)<br\>');
+}
+}
+function grups1()
+{
+gr1 = new Gruppa(prompt('Введите номер'),prompt('Введите название группы'),Number(prompt('Введите количество студентов:')),prompt('Введите курс: '));
+document.getElementById('addgroup1').innerHTML = (gr1.n + ' ' + gr1.spec+ ' ' + gr1.kolich+ ' ' + gr1.course);
+}
+function grups2()
+{
+gr2 = new Gruppa(prompt('Введите номер'),prompt('Введите название группы'),Number(prompt('Введите количество студентов:')),prompt('Введите курс: '));
+document.getElementById('addgroup2').innerHTML = (gr2.n + ' ' + gr2.spec+ ' ' + gr2.kolich+ ' ' + gr2.course);
+}
+function grups3()
+{
+gr3 = new Gruppa(prompt('Введите номер'),prompt('Введите название группы'),Number(prompt('Введите количество студентов:')),prompt('Введите курс: '));
+document.getElementById('addgroup3').innerHTML = (gr3.n + ' ' + gr3.spec+ ' ' + gr3.kolich+ ' ' + gr3.course);
+}
+function add_sub_grups1()
+{
+if(Number(prompt("Что необходимо сделать:0 - удалить студентов из группы, 1 - добавить студентов в группу")))
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо добавить в группу: '));
+gr1.add_stud(k);
+}
+else
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо удалить из группы: '));
+gr1.sub_stud(k);
+}
+document.getElementById('addgroup1').innerHTML = (gr1.n + ' ' + gr1.spec+ ' ' + gr1.kolich+ ' ' + gr1.course);
+}
+function add_sub_grups2()
+{
+if(Number(prompt("Что необходимо сделать:0 - удалить студентов из группы, 1 - добавить студентов в группу")))
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо добавить в группу: '));
+gr2.add_stud(k);
+}
+else
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо удалить из группы: '));
+gr2.sub_stud(k);
+}
+document.getElementById('addgroup2').innerHTML = (gr2.n + ' ' + gr2.spec+ ' ' + gr2.kolich+ ' ' + gr2.course);
+}
+function add_sub_grups3()
+{
+if(Number(prompt("Что необходимо сделать:0 - удалить студентов из группы, 1 - добавить студентов в группу")))
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо добавить в группу: '));
+gr3.add_stud(k);
+}
+else
+{
+let k = Number(prompt('Введите количество студентов, которое необходимо удалить из группы: '));
+gr3.sub_stud(k);
+}
+document.getElementById('addgroup3').innerHTML = (gr3.n + ' ' + gr3.spec+ ' ' + gr3.kolich+ ' ' + gr3.course);
+}
+function ins()
+{
+if ('spec' in gr1)
+{
+document.getElementById('insres').innerHTML = ('Свойство spec есть у объекта gr1');
+}
+else
+{
+document.getElementById('insres').innerHTML = ('Свойство spec отсутсвует у объекта gr1');
+}
+}
+function Student(name,surname,physics,math,IT)
+{
+this.name = name;
+this.surname = surname;
+this.physics = physics;
+this.math = math;
+this.IT= IT;
+this.add_FN = function add_FN(nameFN,surnameFN)
+{
+this.name = nameFN;
+this.surname = surnameFN;
+}
+this.average = function average()
+{
+let ave = 0;
+ave = Number((this.physics + this.math + this.IT)/3);
+document.getElementById('average').innerHTML = ('Средняя оценка студета с именем '+this.name +' '+ this.surname +' равна '+ave);
+}
+this.show = function show()
+{
+alert(this.name +' '+ this.surname);
+}
+}
+function Student1()
+{
+st1 = new Student(prompt('Введите имя'),prompt('Введите фамилию'),Number(prompt('Введите оценку по физике:')),Number(prompt('Введите оценку по математике:')),Number(prompt('Введите оценку по информатике:')));
+document.getElementById('addstoup1').innerHTML = (st1.name + ' ' + st1.surname+ ' ' + st1.physics+ ' ' + st1.math +  ' ' + st1.IT);
+}
+function Student2()
+{
+st2 = new Student(prompt('Введите имя'),prompt('Введите фамилию'),Number(prompt('Введите оценку по физике:')),Number(prompt('Введите оценку по математике:')),Number(prompt('Введите оценку по информатике:')));
+document.getElementById('addstoup2').innerHTML = (st2.name + ' ' + st2.surname+ ' ' + st2.physics+ ' ' + st2.math +  ' ' + st2.IT);
+}
+function Student3()
+{
+st3 = new Student(prompt('Введите имя'),prompt('Введите фамилию'),Number(prompt('Введите оценку по физике:')),Number(prompt('Введите оценку по математике:')),Number(prompt('Введите оценку по информатике:')));
+document.getElementById('addstoup3').innerHTML = (st3.name + ' ' + st3.surname+ ' ' + st3.physics+ ' ' + st3.math +  ' ' + st3.IT);
+}
+function averageST()
+{
+switch(Number(prompt("Введите номер студента, среднюю оценку которого необходимо узнать")))
+{
+case 1:st1.average();break;
+case 2:st2.average();break;
+case 3:st3.average();break;
+}
+}
+function show()
+{
+switch(Number(prompt("Введите номер студента, имя которого необходимо узнать")))
+{
+case 1:st1.show();break;
+case 2:st2.show();break;
+case 3:st3.show();break;
+}
+}
+function add()
+{
+Student.prototype.group = this.group;
+st1.group = prompt("Введите название группы студента c именем " + ' ' + st1.name + ' ' + st1.surname);
+st2.group = prompt("Введите название группы студента c именем " + ' ' + st2.name + ' ' + st2.surname);
+st3.group = prompt("Введите название группы студента c именем " + ' ' + st3.name + ' ' + st3.surname);
+document.getElementById('addstoup1').innerHTML = (st1.name + ' ' + st1.surname+ ' ' + st1.physics+ ' ' + st1.math +  ' ' + st1.IT +  ' ' + st1.group);
+document.getElementById('addstoup2').innerHTML = (st2.name + ' ' + st2.surname+ ' ' + st2.physics+ ' ' + st2.math +  ' ' + st2.IT +  ' ' + st2.group);
+document.getElementById('addstoup3').innerHTML = (st3.name + ' ' + st3.surname+ ' ' + st3.physics+ ' ' + st3.math +  ' ' + st3.IT +  ' ' + st3.group);
+}
+function ins()
+{
+if ('surname' in st1)
+{
+document.getElementById('insres').innerHTML = ('Свойство surname есть у объекта st1');
+}
+else
+{
+document.getElementById('insres').innerHTML = ('Свойство surname отсутсвует у объекта st1');
+}
+}
+
+function output1()
+{
+let mass = ["pow","pop","push","shift","round","floor","slince","sort"];
+
+arrayMass = new Array(); 
+arrayMass = mass.slice(1,4);
+arrayMass[3] = mass[6];
+arrayMass[4] = mass[7];
+
+mathMass = new Array();
+mathMass = mass.slice(4,6);
+mathMass[2] = mass[0];
+let oneMath =["sqrt"];
+let mathMassLast = oneMath.concat(mathMass);
+let lengthArray = arrayMass.push("concat");
+let lengthMath = mathMassLast.length;
+
+document.write('<span>Массив Array:<br/>');
+for(i = 0; i < lengthArray;i++)
+{
+document.write(arrayMass[i] + '<br/>');
+}
+document.write('<span>Массив Math:<br/>');
+for(i = 0; i < lengthMath;i++)
+{
+document.write(mathMassLast[i] + '<br/>');
+}
+delete mathMassLast[2];
+document.write('<span>Массив Math после удаления 3 элемента:<br/>');
+for(i = 0; i < lengthMath;i++)
+{
+document.write(mathMassLast[i] + '<br/>');
+}
+document.write('<br/>');
+if(1 in arrayMass)
+{
+	document.write('В массиве Array есть элемент с номером 2');
+}
+}
+function output2()
+{
+let FN = new String(prompt("Введите своё ФИО."));
+FNU = FN.toUpperCase();
+document.getElementById('output2').innerHTML = (FN + "<br/>");
+}
+function output3()
+{
+let mass = ["pow","pop","push","shift","round","floor","slince","sort"];
+let FN = new String("Строка");
+if (mass instanceof Array)
+{
+	document.getElementById('output3').innerHTML = ("Этот объект является массивом" + "<br/>");
+}
+else
+{
+	document.getElementById('output3').innerHTML = ("Этот объект не является массивом" + "<br/>");
+}
+if (FN instanceof String)
+{
+	document.getElementById('output5').innerHTML = ("Этот объект является cтрокой" + "<br/>");
+}
+else
+{
+	document.getElementById('output5').innerHTML = ("Этот объект не является cтрокой" + "<br/>");
+}
+if (Gruppa instanceof Object)
+{
+	document.getElementById('output4').innerHTML = ("Это объект" + "<br/>");
+}
+else
+{
+	document.getElementById('output4').innerHTML = ("Это не объект " + "<br/>");
+}
+}
+
+function averageST()
+{
+switch(Number(prompt("Введите номер студента, среднюю оценку которого необходимо узнать")))
+{
+case 1:st1.average();break;
+case 2:st2.average();break;
+case 3:st3.average();break;
+}
+}
+function show()
+{
+switch(Number(prompt("Введите номер студента, имя которого необходимо узнать")))
+{
+case 1:st1.show();break;
+case 2:st2.show();break;
+case 3:st3.show();break;
+}
+}
+function add()
+{
+Student.prototype.group = this.group;
+st1.group = prompt("Введите название группы студента c именем " + ' ' + st1.name + ' ' + st1.surname);
+st2.group = prompt("Введите название группы студента c именем " + ' ' + st2.name + ' ' + st2.surname);
+st3.group = prompt("Введите название группы студента c именем " + ' ' + st3.name + ' ' + st3.surname);
+document.getElementById('addstoup1').innerHTML = (st1.name + ' ' + st1.surname+ ' ' + st1.physics+ ' ' + st1.math +  ' ' + st1.IT +  ' ' + st1.group);
+document.getElementById('addstoup2').innerHTML = (st2.name + ' ' + st2.surname+ ' ' + st2.physics+ ' ' + st2.math +  ' ' + st2.IT +  ' ' + st2.group);
+document.getElementById('addstoup3').innerHTML = (st3.name + ' ' + st3.surname+ ' ' + st3.physics+ ' ' + st3.math +  ' ' + st3.IT +  ' ' + st3.group);
+}
+function ins()
+{
+if ('surname' in st1)
+{
+document.getElementById('insres').innerHTML = ('Свойство surname есть у объекта st1');
+}
+else
+{
+document.getElementById('insres').innerHTML = ('Свойство surname отсутсвует у объекта st1');
+}
+}
+function check()
+{
+document.getElementById('1').innerHTML = (typeof(st1.name) + '<br/>')
+document.getElementById('2').innerHTML = (typeof(turnfive)+ '<br/>')
+document.getElementById('3').innerHTML = (typeof(Gruppa)+ '<br/>')
+document.getElementById('4').innerHTML = (typeof(st1.math)+ '<br/>')
+document.getElementById('5').innerHTML = (typeof(st1.add_FN)+ '<br/>')
+}
+function turnfive()
+{
+alert('5');
+}
+
+
+</script>
+</head>
+<body>
+
+<input type='button' value='Добавить группу №1' onclick='grups1()'/>
+Результат: <span id='addgroup1'></span>
+<input type='button' value='Добавить группу №2' onclick='grups2()'/>
+Результат: <span id='addgroup2'></span>
+<input type='button' value='Добавить группу №3' onclick='grups3()'/>
+Результат: <span id='addgroup3'></span>
+<input type='button' value='Изменить количество студентов в группе №1' onclick='add_sub_grups1()'/>
+<input type='button' value='Изменить количество студентов в группе №2' onclick='add_sub_grups2()'/>
+<input type='button' value='Изменить количество студентов в группе №3' onclick='add_sub_grups3()'/>
+Результат: <span id='addstudent'></span><span id='substudent'></span>
+<input type='button' value='Есть ли свойство spec у элемента gr1?' onclick='ins()'/>
+Результат: <span id='insres'></span>
+
+<input type='button' value='Добавить студента №1' onclick='Student1()'/>
+Результат: <span id='addstoup1'></span>
+<input type='button' value='Добавить студента №2' onclick='Student2()'/>
+Результат: <span id='addstoup2'></span>
+<input type='button' value='Добавить студента №3' onclick='Student3()'/>
+Результат: <span id='addstoup3'></span>
+<input type='button' value='Средняя оценка студента' onclick='averageST()'/>
+Результат: <span id='average'></span>
+<input type='button' value='Вывести имя студента' onclick='show()'/>
+<input type='button' value='Добавить ещё одно значение' onclick='add()'/>
+<input type='button' value='Есть ли свойство surname у объекта st1?' onclick='ins()'/>
+Результат: <span id='insres'></span>
+
+<input type='button' value='Массив элементов Array и Math' onclick='output1()'/>
+<input type='button' value='Строка String' onclick='output2()'/>
+<span id="output2"> </span>
+<input type='button' value='Проверка объектов' onclick='output3()'/>
+Результат:<span id="output3"> </span>
+<span id="output4"> </span>
+<span id="output5"> </span>
+
+</body>
+
+
+</html>

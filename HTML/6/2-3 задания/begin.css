@@ -1,0 +1,60 @@
+ body
+{
+	background:linear-gradient(45deg,red,orange,yellow,green,cyan,blue,purple);
+	background-repeat:no-repeat;
+	background-size:2000px 1500px;
+	animation:fon 2s 99;
+animation-timing-function: linear;
+}
+@font-face
+{
+	font-family:samsung;
+	src:url("SamsungSharpSansBd.woff2");
+}
+@font-face
+{
+	font-family:pixel;
+	src:url("pixel.ttf");
+}
+.mainbutton{
+    background:linear-gradient(45deg,rgb(230, 0, 230),rgb(51, 102, 255));
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+	font-family:samsung;
+}
+
+.mainmenubtn:hover {
+    background-color: red;
+    }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+    background-color: black;
+    min-width: 200px;
+	animation:menu 2s 1;
+	animation-fill-mode:forwards;
+}
+.dropdown-child a {
+	font-family:samsung;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+@keyframes menu
+{
+from {padding:0px; opacity:0;}
+to{padding:20px;opacity:1;}
+}
+@keyframes fon {
+ from {background:linear-gradient(45deg,red,orange,yellow,green,cyan,blue,purple);}
+to{background:linear-gradient(-45deg,red,orange,yellow,green,cyan,blue,purple);}

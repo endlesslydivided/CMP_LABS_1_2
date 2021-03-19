@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 2</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+function tabletd2()
+{
+var a = new Number(prompt("Введите начальное значение радиуса a"));
+var b = new Number(prompt("Введите конечное значение радиуса b"));
+document.write('<table style="border:2px solid black;border-collapse:collapse ">');
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+document.write('<td style="border:2px solid black;" >'+ 'Радиус' + '</td>'+'<td style="border:2px solid black;" >'+ 'Площадь круга' + '</td>'+'<td style="border:2px solid black;" >'+ 'Длина окружности' + '</td>');
+do
+{
+document.write('<tr style="margin:auto; border:2px solid black; background:rgb(80,80,200,0.5);">');
+S = (Math.pow(a,2) * Math.PI).toFixed(3);
+C = (2*a*Math.PI).toFixed(3);
+document.write('<td style="border:2px solid black;" >'+ a + '</td>');
+document.write('<td style="border:2px solid black;" >'+ S + '</td>');
+document.write('<td style="border:2px solid black;" >'+ C + '</td>');
+a+= 0.3 / 0.1;
+document.write('</tr>');
+}while(a < b)
+document.write('</table>');
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="Расчёт длины окружности и площади круга" onclick="tabletd2()"/>
+
+</body>
+
+
+</html>

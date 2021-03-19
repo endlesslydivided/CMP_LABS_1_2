@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 8</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script async type="text/javascript">
+function textCColor()
+{
+let textID =document.getElementById("textCC");
+textID.style.color = 'rgb('+(Math.random() * 255 + 0) +','+(Math.random() * 255 + 0)+','+(Math.random() * 255 + 0)+')';
+}
+function textCSize()
+{
+let textID =document.getElementById("textCS");
+textID.style.fontSize =  (Math.random() * 60 + 25) +'px';
+}
+let i = 0;
+let pics = new Array("dog1.jfif","dog2.gif","dog3.jfif");
+function changePhoto()
+{
+if( i == pics.length)
+{
+	i = 0;
+}
+str.innerHTML = '<img src="'+pics[i++]+'"onclick="changePhoto()">';
+}
+let l = 0;
+function changePT()
+{
+if(l == 1)
+{
+	l = 0;
+	stRR.innerHTML = 'Текст';
+}
+else
+{
+stRR.innerHTML = '<img src="kitty.jpg" >';
+l++;
+}
+}
+function bigger()
+{
+let pes = document.getElementById("pesIMG");
+pes.style.width	= 500 +'px';
+}
+function smaller()
+{
+let pes = document.getElementById("pesIMG");
+pes.style.width	= 330 + 'px';
+}
+function border()
+{
+let paragraph = document.getElementById("paragraph");
+if(d == 0)
+{
+paragraph.style.border = "5px black dotted";
+d++;
+}
+else
+{
+paragraph.style.border = "none";
+d--;
+}
+}
+</script>
+</head>
+<body>
+<span id="textCC" onmouseover="textCColor()">Произвольный текст</span><br>
+<span id="textCS" onclick="textCSize()">Произвольный текст</span><br>
+<span id="photos"></span><br>
+<span id="photosText" onclick="changePT()"></span><br>
+
+<script type="text/javascript">
+let d = 0;
+let str = document.getElementById('photos');
+str.innerHTML += '<img src="'+pics[i]+'"onclick="changePhoto()">';
+</script>
+
+<script type="text/javascript">
+let stRR = document.getElementById('photosText');
+stRR.innerHTML = 'Текст';
+</script>
+<img id="pesIMG" src="pes.jpg" onmouseover="bigger()" onmouseout="smaller()"/>
+<p id="paragraph" class="CLparagraph" ondblclick="border()" > Произвольный абзац </p>
+</body>
+
+
+</html>

@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="styleSheetUNIVERSITY.xsl"?>
+
+
+<myDocument>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="UNIVERSITIES">
+ <xs:element name="UNIVERSITY">
+ <xs:complexType>
+ <xs:sequence>
+ <xs:element name="UNIVERSITY_NAME" type="xs:string"/>
+ <xs:element name="PASS_POINT" type="xs:string"/>
+ <xs:element name="PLAN" type="xs:string"/>
+ <xs:element name="CITY" type="xs:string"/>
+ </xs:sequence>
+ </xs:complexType>
+ </xs:element>
+  </xs:element>
+</xs:schema>
+
+<UNIVERSITIES>
+<UNIVERSITY>
+<UNIVERSITY_NAME> БГУИР </UNIVERSITY_NAME>
+<PASS_POINT> 323</PASS_POINT>
+<PLAN> 150 </PLAN>
+<CITY> Минск </CITY>
+</UNIVERSITY>
+<UNIVERSITY>
+<UNIVERSITY_NAME> БНТУ </UNIVERSITY_NAME>
+<PASS_POINT> 330</PASS_POINT>
+<PLAN> 200 </PLAN>
+<CITY> Минск </CITY>
+</UNIVERSITY>
+<UNIVERSITY>
+<UNIVERSITY_NAME> БРУ </UNIVERSITY_NAME>
+<PASS_POINT> 250</PASS_POINT>
+<PLAN> 200 </PLAN>
+<CITY> Могилёв </CITY>
+</UNIVERSITY>
+</UNIVERSITIES>
+</myDocument>

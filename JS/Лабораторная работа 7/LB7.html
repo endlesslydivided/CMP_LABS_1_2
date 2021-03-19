@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 6</title>
+<link rel="stylesheet" href="LB6.1.css">
+<script type="text/javascript">
+
+function open1()
+{
+winOne = window.open();
+winOne.document.write('<title>Лабораторная работа 4</title>')
+nameOne = winOne.document.getElementsByTagName('title')[0].innerHTML;
+}
+function open2()
+{
+winTwo = window.open();
+winTwo.document.write('<title>Лабораторная работа 5</title>')
+nameTwo = winTwo.document.getElementsByTagName('title')[0].innerHTML;
+}
+function open3()
+{
+winOne.alert(nameOne);
+}
+function open4()
+{
+winTwo.alert(nameTwo);
+}
+function options()
+{
+document.getElementById('tables').innerHTML = '<table><tr><td>Свойство</td><td>Значение</td></tr>'
++'<tr><td>'+'navigator.userAgent'+'</td><td>'+ navigator.userAgent +'</td></tr>'
++'<tr><td>'+'navigator.appVersion'+'</td><td>'+ navigator.appVersion +'</td></tr>'
++'<tr><td>'+'navigator.appName'+'</td><td>'+ navigator.appName +'</td></tr>'
++'<tr><td>'+'navigator.appCodeName'+'</td><td>'+ navigator.appCodeName +'</td></tr>'
++'<tr><td>'+'navigator.platform'+'</td><td>'+ navigator.platform  +'</td></tr>'
++'<tr><td>'+'navigator.javaEnabled()'+'</td><td>'+ navigator.javaEnabled()  +'</td></tr>'
++'<tr><td>'+'screen.width'+'</td><td>'+ screen.width +'</td></tr>'
++'<tr><td>'+'screen.height'+'</td><td>'+ screen.height +'</td></tr>'
++'<tr><td>'+'screen.colorDepth'+'</td><td>'+ screen.colorDepth +'</td></tr>'
++'<tr><td>'+'history.length'+'</td><td>'+ history.length +'</td></tr>'
++'<tr><td>'+'history'+'</td><td>'+ history.url +'</td></tr>'
++'<tr><td>'+'location.href'+'</td><td>'+ location.href +'</td></tr>'
++'<tr><td>'+'location.host'+'</td><td>'+ location.host +'</td></tr></table>';
+
+}
+</script>
+</head>
+
+<body>
+<a href="LB2.html">Ссылка</a>
+<input type='button' value='Открыть окно 1' onclick='open1()'/>
+<input type='button' value='Открыть окно 2' onclick='open2()'/>
+<input type='button' value='Имя окна 1' onclick='open3()'/>
+<input type='button' value='Имя окна 2' onclick='open4()'/>
+<input type='button' value='Вывести таблицу свойств и значений' onclick='options()'/>
+Результат:
+<span id="tables"></span>
+
+</body>
+
+
+</html>

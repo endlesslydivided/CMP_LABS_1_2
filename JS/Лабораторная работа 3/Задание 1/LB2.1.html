@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа 2</title>
+<link rel="stylesheet" href="tablestyle.css">
+<script type="text/javascript">
+
+function vivod()
+{
+alert("Вас приветствует учебный центр")
+name = prompt("Введите имя")
+alert('Добро пожаловать на наши курсы, '+ name + '!')
+if(confirm("Хотите стать Web-дизайнером?"))
+{
+alert('Учите стили CSS и JavaScript!')
+}
+else
+{
+alert('Упускаете время!')
+}
+}
+
+function sumnumbers()
+{
+number1 = prompt("Введите первое число")
+number2 = prompt("Введите второе число")
+sum = +number2 + +number1
+alert('Сумма данных чисел равна: ' + sum )
+document.getElementById('resultsumone').innerHTML = sum;
+}
+
+function sumstring()
+{
+number1 = prompt("Введите первую строку")
+number2 = prompt("Введите вторую строку")
+sum = number1 + " " + number2 
+alert('Сумма данных строк равна: ' + sum )
+document.getElementById('resultsumtwo').innerHTML = sum;
+}
+
+function sumstringnumber()
+{
+number1 = prompt("Введите строку")
+number2 = prompt("Введите число")
+sum = number1 + +number2 
+alert('Сумма строки и числа равна:' + sum )
+document.getElementById('resultsumthr').innerHTML = sum;
+}
+
+function sumnumberstring()
+{
+number1 = prompt("Введите число")
+number2 = prompt("Введите строку")
+sum = +number1 + number2 
+alert('Сумма числа и строки  равна:' + sum )
+document.getElementById('resultsumfour').innerHTML = sum;
+}
+
+function vivod2()
+{
+sum = 'строка'
+alert('Результатом сложения строки и числа всегда будет … ' + sum )
+}
+
+function vira()
+{
+var x = Number(prompt("Введите значение переменной x"))
+var y = Number(prompt("Введите значение переменной y"))
+var znaheniea = (35*y - 25*x)/5 + 232;
+var znahenieb = (8*y/x+5*x/y-43)*6;
+var znaheniec = (znaheniea > znahenieb) ? znaheniea % znahenieb : znahenieb % znaheniea;
+alert('Результат первого выражения: ' + znaheniea  )
+alert('Результат второго выражения: ' + znahenieb  )
+alert('Остаток от деления первого выражения на второе: ' + znaheniec )
+
+document.getElementById('resulta').innerHTML = znaheniea;
+document.getElementById('resultb').innerHTML = znahenieb;
+document.getElementById('resultc').innerHTML = znaheniec;
+}
+
+function ifelse()
+{
+var x = Number(prompt("Введите значение переменной x"))
+if((x < 20 || x > 40) && x != 15 && x % 5 == 0)
+{
+alert('Правильное значение')
+}
+else
+{
+alert('Неправильное значение')
+}
+}
+
+function ifelseif()
+{
+var x = Number(prompt("Введите значение первого числа"))
+var y = Number(prompt("Введите значение второго числа" ))
+if(x > y)
+{
+alert( x +' больше ' + y )
+}
+else if (x == y)
+{
+alert(x +' равно ' + y)
+}
+else
+{
+alert(x +' меньше ' + y)
+}
+}
+function ifelseifalt()
+{
+var x = Number(prompt("Введите ваш средний балл по экзаменам"));
+(x > 6) ? alert('У вас повышенная стипендия') :alert('У вас обычная стипендия');
+}
+function whichday()
+{
+var x = Number(prompt("Введите номер дня в неделе"));
+if(x > 0 && x < 7)
+{switch(x)
+{
+case 1: document.getElementById('nameday').innerHTML = 'Понедельник';break;
+case 2: document.getElementById('nameday').innerHTML = 'Вторник';break;
+case 3: document.getElementById('nameday').innerHTML = 'Среда';break;
+case 4: document.getElementById('nameday').innerHTML = 'Четверг';break;
+case 5: document.getElementById('nameday').innerHTML = 'Пятница';break;
+case 6: document.getElementById('nameday').innerHTML = 'Суббота';break;
+case 7: document.getElementById('nameday').innerHTML = 'Воскресенье';break;
+}
+}
+else
+{
+document.getElementById('nameday').innerHTML = 'Введено неверное число!';
+}
+}
+
+function trycatch()
+{
+try {
+
+var x = Number(prompt("Введите число")); 
+
+   if (isNaN(x)) 
+   {
+    throw new SyntaxError("Введён текст!");
+  }
+  else
+  {
+  alert('Ваше число: ' + x);
+  }
+} catch(e) {
+
+  alert('Ошибка: был ввёден текст, а не число!'); 
+
+}
+}
+</script>
+</head>
+
+<body>
+
+<h1>Выберите необходимую функцию:</h1>
+<ol>
+<li><input type='button' value='Ввести своё имя' onclick='vivod()'/>
+<li><input type='button' value='Сложить два числа' onclick='sumnumbers()'/>
+Результат: 
+<br><span  id="resultsumone" style="font-size:30px"></span><br>
+<li><input type='button' value='Сложить две строки' onclick='sumstring()'/>
+Результат: 
+<br><span  id="resultsumtwo"></span><br>
+<li><input type='button' value='Сложить строку и число' onclick='sumstringnumber()'/>
+Результат: 
+<br><span  id="resultsumthr"></span><br>
+<li><input type='button' value='Сложить число и строку' onclick='sumnumberstring()'/>
+Результат: 
+<br><span  id="resultsumfour"></span><br>
+<li><input type='button' value='Результатом сложения строки и числа всегда будет …' onclick='vivod2()'/>
+<li><input type='button' value='Найти значение выражений ((35 * y-25 * x) / 5 + 232) и ((8 * y / x + 5 * x / y – 43)*6) ' onclick='vira()'/> 
+Результат: 
+<br><span  id="resulta" style="color:cyan"></span><br>
+<span  id="resultb"  style="color:cyan"></span><br>
+<span  id="resultc" style="color:cyan"></span>
+<li><input type='button' value='IFELSE' onclick='ifelse()'/>
+<li><input type='button' value='IFELSEIF' onclick='ifelseif()'/>
+<li><input type='button' value='IFELSE(альтернативная конструкция)' onclick='ifelseifalt()'/>
+<li><input type='button' value='Какой день недели?' onclick='whichday()'/>
+Результат: 
+<br><span  id="nameday" style="font-family:impact; color:red"></span><br>
+<li><input type='button' value='Пример работы try..catch' onclick='trycatch()'/>
+</ol>
+
+</body>
+
+
+</html>
